@@ -4,660 +4,533 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>C Abdurabb — Social Media Strategist & Founder</title>
-    <!-- Modern Sans-Serif Font (Plus Jakarta Sans) -->
+    
+    <!-- Google Fonts: Playfair Display (Serif) & Plus Jakarta Sans (Sans) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
-            --bg-color: #e5e5e5;
-            --container-bg: #ffffff;
-            --card-lavender: #8282d8;
-            --card-mint: #a2ded0;
-            --card-purple: #816eb8;
-            --card-yellow: #ffc266;
-            --card-dark: #1e1e24;
-            --card-black: #111111;
-            --text-main: #111111;
-            --text-light: #ffffff;
-            --text-muted: #666666;
-            --radius-lg: 28px;
-            --radius-md: 20px;
-            --radius-sm: 12px;
+            --bg-dark: #0b0c0e;
+            --surface-card: #121418;
+            --surface-card-hover: #181a20;
+            --border-line: rgba(255, 255, 255, 0.08);
+            --border-line-active: rgba(255, 255, 255, 0.2);
+            --text-primary: #f4f4f6;
+            --text-secondary: #8e929a;
+            --accent-brand: #e0f2fe;
+            --accent-glow: rgba(56, 189, 248, 0.15);
+            
+            --font-serif: 'Playfair Display', Georgia, serif;
+            --font-sans: 'Plus Jakarta Sans', sans-serif;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-family: var(--font-sans);
             -webkit-font-smoothing: antialiased;
         }
 
         body {
-            background-color: var(--bg-color);
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
             min-height: 100vh;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 2rem 1rem;
-            color: var(--text-main);
-        }
-
-        /* Outer Frame Canvas */
-        .bento-container {
-            background: var(--container-bg);
-            width: 100%;
-            max-width: 1150px;
-            border-radius: 36px;
-            padding: 2.5rem;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.06);
-            display: grid;
-            grid-template-columns: auto 1fr;
-            gap: 2rem;
-            position: relative;
-        }
-
-        /* Left Side Navigation Links */
-        .sidebar-nav {
-            display: flex;
             flex-direction: column;
-            justify-content: flex-end;
-            gap: 2.5rem;
-            padding-bottom: 1.5rem;
+            justify-content: space-between;
+            padding: 2rem;
+            overflow-x: hidden;
         }
 
-        .nav-item {
+        .ambient-glow {
+            position: fixed;
+            top: -10%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--accent-glow) 0%, rgba(0,0,0,0) 70%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .page-wrapper {
+            max-width: 1280px;
+            margin: 0 auto;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* --- NAVIGATION --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-line);
+            margin-bottom: 3.5rem;
+        }
+
+        .brand-logo {
+            font-family: var(--font-sans);
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-primary);
             text-decoration: none;
-            color: var(--text-main);
-            font-weight: 600;
-            font-size: 0.95rem;
-            writing-mode: vertical-rl;
-            transform: rotate(180deg);
-            letter-spacing: -0.3px;
-            opacity: 0.8;
+        }
+
+        .brand-logo span {
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        nav {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--text-primary);
+        }
+
+        .cta-header-btn {
+            background: transparent;
+            border: 1px solid var(--border-line);
+            color: var(--text-primary);
+            padding: 8px 18px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-decoration: none;
             transition: all 0.2s ease;
         }
 
-        .nav-item:hover, .nav-item.active {
-            opacity: 1;
-            color: var(--card-purple);
+        .cta-header-btn:hover {
+            border-color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.05);
         }
 
-        /* Main Bento Workspace */
-        .bento-grid {
-            display: grid;
-            grid-template-columns: 320px 1fr;
-            gap: 1.25rem;
-        }
-
-        /* Corner Arrow Symbol for Bento Cards */
-        .arrow-corner {
-            position: absolute;
-            top: 1.2rem;
-            right: 1.2rem;
-            font-size: 1.1rem;
-            opacity: 0.7;
-            transition: transform 0.2s ease;
-        }
-
-        .bento-card:hover .arrow-corner {
-            transform: translate(2px, -2px);
-            opacity: 1;
-        }
-
-        /* --- LEFT MAIN CARD (PERSONAL PROFILE) --- */
-        .profile-card {
-            background-color: var(--card-lavender);
-            border-radius: var(--radius-lg);
-            padding: 2rem 1.5rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            color: var(--text-light);
-            position: relative;
-            min-height: 540px;
-            overflow: hidden;
-        }
-
-        .profile-card .badge {
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(8px);
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            align-self: flex-start;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .avatar-wrapper {
-            margin: 1.5rem auto;
-            position: relative;
-            width: 170px;
-            height: 170px;
-        }
-
-        .avatar-ring {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #111111, #2a2a2e);
-            border: 4px solid #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        }
-
-        .avatar-initial {
-            font-size: 5rem;
-            font-weight: 900;
-            color: #ffffff;
-            background: linear-gradient(180deg, #ffffff 0%, #a2ded0 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            user-select: none;
-        }
-
-        .profile-info {
-            margin-top: auto;
-        }
-
-        .profile-title {
-            font-size: 2rem;
-            font-weight: 800;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            letter-spacing: -1px;
-        }
-
-        .profile-email {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-top: 1px dashed rgba(255,255,255,0.4);
-            padding-top: 1rem;
-            font-size: 0.82rem;
-            color: var(--text-light);
-            text-decoration: none;
-            word-break: break-all;
-        }
-
-        .stamp-badge {
-            position: absolute;
-            bottom: 1.5rem;
-            right: 1.2rem;
-            width: 60px;
-            height: 60px;
-            background: #000000;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            font-size: 0.55rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-            color: #fff;
-            line-height: 1.2;
-        }
-
-        /* --- RIGHT CONTENT AREA --- */
-        .right-layout {
-            display: flex;
-            flex-direction: column;
-            gap: 1.25rem;
-        }
-
-        .header-title-wrapper {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .main-heading {
-            font-size: 4rem;
-            font-weight: 800;
-            letter-spacing: -2px;
-            line-height: 1;
-        }
-
-        /* Middle Grid Layout */
-        .middle-grid {
+        /* --- HERO SECTION --- */
+        .hero-grid {
             display: grid;
             grid-template-columns: 1.4fr 1fr;
-            gap: 1.25rem;
-        }
-
-        .showcase-card {
-            background-color: #0d0d11;
-            border-radius: var(--radius-lg);
-            position: relative;
-            overflow: hidden;
-            min-height: 220px;
-            display: flex;
-            justify-content: center;
+            gap: 4rem;
             align-items: center;
-            text-decoration: none;
-            color: white;
-            box-shadow: inset 0 0 40px rgba(0,0,0,0.8);
+            margin-bottom: 4rem;
         }
 
-        .showcase-bg-initial {
-            font-size: 9rem;
-            font-weight: 900;
-            color: #e50914;
-            position: absolute;
-            opacity: 0.85;
-            text-shadow: 0 10px 30px rgba(229, 9, 20, 0.4);
-            user-select: none;
+        .hero-title-tag {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        .play-btn {
-            width: 58px;
-            height: 58px;
-            background: rgba(255,255,255,0.9);
+        .hero-title-tag::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #10b981;
             border-radius: 50%;
+            display: inline-block;
+        }
+
+        .hero-headline {
+            font-family: var(--font-serif);
+            font-size: 4.2rem;
+            font-weight: 400;
+            line-height: 1.08;
+            letter-spacing: -1.5px;
+            margin-bottom: 2rem;
+        }
+
+        .hero-headline em {
+            font-style: italic;
+            font-weight: 300;
+            color: var(--text-secondary);
+        }
+
+        .hero-bio {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 520px;
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-action-group {
             display: flex;
-            justify-content: center;
             align-items: center;
-            color: #111;
-            font-size: 1.2rem;
-            backdrop-filter: blur(6px);
-            z-index: 2;
+            gap: 1.5rem;
+        }
+
+        .primary-btn {
+            background: var(--text-primary);
+            color: var(--bg-dark);
+            padding: 14px 28px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             transition: transform 0.2s ease, background 0.2s ease;
         }
 
-        .showcase-card:hover .play-btn {
-            transform: scale(1.12);
+        .primary-btn:hover {
+            transform: translateY(-2px);
             background: #ffffff;
         }
 
-        .stats-stack {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .stat-card {
-            padding: 1.2rem 1.5rem;
-            border-radius: var(--radius-md);
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+        .secondary-btn {
+            color: var(--text-primary);
             text-decoration: none;
-            transition: transform 0.2s ease;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-2px);
-        }
-
-        .stat-card.mint {
-            background-color: var(--card-mint);
-            color: #111;
-        }
-
-        .stat-card.purple {
-            background-color: var(--card-purple);
-            color: #fff;
-        }
-
-        .stat-number {
-            font-size: 2rem;
-            font-weight: 800;
-            line-height: 1;
-            margin-bottom: 0.2rem;
-        }
-
-        .stat-label {
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
-
-        /* Bottom Grid Section */
-        .bottom-grid {
-            display: grid;
-            grid-template-columns: 1.1fr 1.5fr;
-            gap: 1.25rem;
-        }
-
-        /* --- INSTAGRAM PROFILE CARD --- */
-        .insta-profile-card {
-            background-color: var(--card-dark);
-            border-radius: var(--radius-lg);
-            padding: 1.4rem;
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            position: relative;
-            text-decoration: none;
-            min-height: 160px;
-            transition: transform 0.2s ease;
-        }
-
-        .insta-profile-card:hover {
-            transform: translateY(-2px);
-        }
-
-        .insta-header {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        /* Instagram Gradient Ring */
-        .insta-avatar-ring {
-            width: 52px;
-            height: 52px;
-            border-radius: 50%;
-            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-            padding: 2.5px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-shrink: 0;
-        }
-
-        .insta-avatar-inner {
-            width: 100%;
-            height: 100%;
-            background: #1e1e24;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: 800;
-            color: #fff;
-            font-size: 1.1rem;
-            border: 2px solid #1e1e24;
-        }
-
-        .insta-meta {
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-            overflow: hidden;
-        }
-
-        .insta-username-row {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-        }
-
-        .insta-username {
-            font-weight: 700;
             font-size: 0.95rem;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-        .insta-verified {
-            color: #0095f6;
-            font-size: 0.85rem;
-        }
-
-        .insta-subtext {
-            font-size: 0.75rem;
-            color: #aaaaaa;
-        }
-
-        .insta-footer {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 1rem;
-            padding-top: 0.8rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .insta-count {
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: #ffffff;
-        }
-
-        .insta-count span {
-            color: #aaaaaa;
-            font-weight: 400;
-            font-size: 0.75rem;
-        }
-
-        .insta-btn {
-            background-color: #0095f6;
-            color: #fff;
-            font-size: 0.75rem;
-            font-weight: 700;
-            padding: 6px 14px;
-            border-radius: 8px;
+            font-weight: 500;
             display: inline-flex;
             align-items: center;
-            gap: 5px;
+            gap: 6px;
+            transition: opacity 0.2s ease;
         }
 
-        /* Yellow Accent Card */
-        .yellow-accent-card {
-            background-color: var(--card-black);
-            border-radius: var(--radius-lg);
-            display: grid;
-            grid-template-columns: 100px 1fr;
-            overflow: hidden;
+        .secondary-btn:hover {
+            opacity: 0.8;
+        }
+
+        /* --- FEATURED CARD --- */
+        .featured-card {
+            background: var(--surface-card);
+            border: 1px solid var(--border-line);
+            border-radius: 20px;
+            padding: 2.5rem;
             position: relative;
+            overflow: hidden;
+            transition: border-color 0.3s ease;
         }
 
-        .yellow-left {
+        .featured-card:hover {
+            border-color: var(--border-line-active);
+        }
+
+        .card-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .profile-avatar-row {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .avatar-initial {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            border: 1px solid var(--border-line-active);
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 1rem;
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--text-primary);
         }
 
-        .orb-graphic {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: radial-gradient(circle, #8282d8 0%, #3023ae 100%);
-            box-shadow: 0 0 20px rgba(130, 130, 216, 0.5);
+        .avatar-meta h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
         }
 
-        .yellow-right {
-            background-color: var(--card-yellow);
-            padding: 1.5rem;
-            color: #111;
+        .avatar-meta p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        .metric-highlight {
+            border-top: 1px solid var(--border-line);
+            padding-top: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .metric-number {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            line-height: 1;
+            font-weight: 400;
+        }
+
+        .metric-desc {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            max-width: 140px;
+            text-align: right;
+        }
+
+        /* --- BENTO EDITORIAL GRID --- */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border-line);
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            font-weight: 400;
+        }
+
+        .editorial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .grid-card {
+            background: var(--surface-card);
+            border: 1px solid var(--border-line);
+            border-radius: 16px;
+            padding: 2rem;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            position: relative;
+            justify-content: space-between;
+            min-height: 240px;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.25s ease;
         }
 
-        .yellow-right .stat-number {
-            font-size: 2.2rem;
+        .grid-card:hover {
+            background: var(--surface-card-hover);
+            border-color: var(--border-line-active);
+            transform: translateY(-3px);
         }
 
-        .yellow-right .stat-label {
-            font-size: 0.85rem;
+        .card-header-icon {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-header-icon i {
+            font-size: 1.4rem;
+            color: var(--text-secondary);
+        }
+
+        .card-arrow {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+
+        .grid-card:hover .card-arrow {
+            transform: translate(2px, -2px);
+            color: var(--text-primary);
+        }
+
+        .card-title {
+            font-size: 1.3rem;
             font-weight: 600;
-            line-height: 1.2;
+            margin-bottom: 0.5rem;
         }
 
-        /* Responsive Breakpoints */
-        @media (max-width: 900px) {
-            .bento-container {
-                grid-template-columns: 1fr;
-                padding: 1.5rem;
-            }
+        .card-subtitle {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
 
-            .sidebar-nav {
-                flex-direction: row;
-                justify-content: space-around;
-                writing-mode: horizontal-tb;
-                padding-bottom: 0;
-            }
+        .card-stat {
+            font-family: var(--font-serif);
+            font-size: 2.5rem;
+            font-weight: 400;
+            margin-top: auto;
+        }
 
-            .nav-item {
-                writing-mode: horizontal-tb;
-                transform: none;
-            }
+        /* --- FOOTER --- */
+        footer {
+            border-top: 1px solid var(--border-line);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
 
-            .bento-grid {
-                grid-template-columns: 1fr;
-            }
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+        }
 
-            .middle-grid, .bottom-grid {
-                grid-template-columns: 1fr;
-            }
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
 
-            .main-heading {
-                font-size: 2.8rem;
-            }
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 960px) {
+            .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+            .editorial-grid { grid-template-columns: 1fr; }
+            .hero-headline { font-size: 3rem; }
+            nav { display: none; }
         }
     </style>
 </head>
 <body>
 
-    <div class="bento-container">
+    <div class="ambient-glow"></div>
+
+    <div class="page-wrapper">
         
-        <!-- Left Navigation Links -->
-        <nav class="sidebar-nav">
-            <a href="#about" class="nav-item active">About Me</a>
-            <a href="#clients" class="nav-item">Clients</a>
-            <a href="#strategy" class="nav-item">Strategy</a>
-            <a href="#portfolio" class="nav-item">Portfolio</a>
-            <a href="#ventures" class="nav-item">Ventures</a>
-        </nav>
+        <!-- Header Nav -->
+        <header>
+            <a href="index.html" class="brand-logo">C. Abdurabb <span>/ Portfolio</span></a>[cite: 1]
+            <nav>
+                <a href="about.html" class="nav-link">About Me</a>
+                <a href="#work" class="nav-link">Selected Work</a>
+                <a href="mailto:workwithcabdurabb@gmail.com" class="nav-link">Contact</a>[cite: 1]
+            </nav>
+            <a href="mailto:workwithcabdurabb@gmail.com" class="cta-header-btn">Get in Touch</a>[cite: 1]
+        </header>
 
-        <!-- Bento Grid Frame -->
-        <div class="bento-grid">
-            
-            <!-- PROFILE CARD -->
-            <div class="profile-card bento-card">
-                <div class="badge">
-                    <i class="fa-solid fa-sparkles"></i> Social Media Strategist[cite: 1]
-                </div>
-
-                <div class="avatar-wrapper">
-                    <div class="avatar-ring">
-                        <span class="avatar-initial">A</span>
-                    </div>
-                </div>
-
-                <div class="profile-info">
-                    <h2 class="profile-title">Im, <br>C Abdurabb[cite: 1]</h2>
-                    <a href="mailto:workwithcabdurabb@gmail.com" class="profile-email">
-                        <span>workwithcabdurabb@gmail.com</span>[cite: 1]
-                        <i class="fa-regular fa-envelope"></i>
+        <!-- Main Hero -->
+        <section class="hero-grid">
+            <div class="hero-left">
+                <div class="hero-title-tag">Social Media Strategist & Founder</div>[cite: 1]
+                <h1 class="hero-headline">Scaling brands through <em>data-driven</em> storytelling.</h1>[cite: 1]
+                <p class="hero-bio">
+                    MBA in Marketing & Data Analytics[cite: 1]. Specializing in Instagram growth architecture, viral content execution, and scaling e-commerce brands[cite: 1].
+                </p>
+                <div class="hero-action-group">
+                    <a href="mailto:workwithcabdurabb@gmail.com" class="primary-btn">
+                        Work With Me <i class="fa-solid fa-arrow-right"></i>[cite: 1]
                     </a>
-                </div>
-
-                <div class="stamp-badge">
-                    C.<br>ABDURABB[cite: 1]
+                    <a href="about.html" class="secondary-btn">Read Biography <i class="fa-solid fa-chevron-right"></i></a>
                 </div>
             </div>
 
-            <!-- RIGHT GRID WRAPPER -->
-            <div class="right-layout">
+            <!-- Hero Feature Card -->
+            <div class="featured-card">
+                <div class="card-label">Featured Venture</div>
+                <div class="profile-avatar-row">
+                    <div class="avatar-initial">CP</div>
+                    <div class="avatar-meta">
+                        <h3>CasePlanet</h3>[cite: 1]
+                        <p>Mobile Accessories Startup</p>[cite: 1]
+                    </div>
+                </div>
+                <div class="metric-highlight">
+                    <div>
+                        <div class="metric-number">90K+</div>[cite: 1]
+                        <span style="color: var(--text-secondary); font-size: 0.8rem;">Instagram Audience</span>
+                    </div>
+                    <div class="metric-desc">
+                        10,000+ Customers Converted Organically[cite: 1]
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Selected Work Section -->
+        <section id="work">
+            <div class="section-header">
+                <h2 class="section-title">Key Work & Impact</h2>
+                <span style="color: var(--text-secondary); font-size: 0.9rem;">01 — 03</span>
+            </div>
+
+            <div class="editorial-grid">
                 
-                <!-- Main Header Title -->
-                <div class="header-title-wrapper">
-                    <h1 class="main-heading">Portfolio<sup>↗</sup></h1>
-                </div>
-
-                <!-- Middle Content Section -->
-                <div class="middle-grid">
-                    
-                    <!-- Red 3D Initial Play Banner -->
-                    <a href="https://www.instagram.com/rib_zee" target="_blank" class="showcase-card bento-card">[cite: 1]
-                        <i class="fa-solid fa-arrow-up-right-from-square arrow-corner"></i>
-                        <div class="showcase-bg-initial">A</div>
-                        <div class="play-btn">
-                            <i class="fa-solid fa-play"></i>
-                        </div>
-                    </a>
-
-                    <!-- Stacked Metrics -->
-                    <div class="stats-stack">
-                        <a href="https://www.instagram.com/caseplanet.india_" target="_blank" class="stat-card mint bento-card">[cite: 1]
-                            <i class="fa-solid fa-arrow-up-right-from-square arrow-corner"></i>
-                            <div class="stat-number">90K+</div>[cite: 1]
-                            <div class="stat-label">CasePlanet Community</div>[cite: 1]
-                        </a>
-
-                        <a href="https://www.instagram.com/eduport.app" target="_blank" class="stat-card purple bento-card">[cite: 1]
-                            <i class="fa-solid fa-arrow-up-right-from-square arrow-corner"></i>
-                            <div class="stat-number">20+</div>[cite: 1]
-                            <div class="stat-label">Instagram Pages Managed</div>[cite: 1]
-                        </a>
+                <!-- Card 1: Eduport -->
+                <a href="https://www.instagram.com/eduport.app" target="_blank" class="grid-card">[cite: 1]
+                    <div class="card-header-icon">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <i class="fa-solid fa-arrow-up-right-from-square card-arrow"></i>
                     </div>
-                </div>
-
-                <!-- Bottom Grid Section -->
-                <div class="bottom-grid">
-                    
-                    <!-- NEW INSTAGRAM PROFILE CARD (CasePlanet) -->
-                    <a href="https://www.instagram.com/caseplanet.india_" target="_blank" class="insta-profile-card bento-card">[cite: 1]
-                        <i class="fa-solid fa-arrow-up-right-from-square arrow-corner"></i>
-                        
-                        <div class="insta-header">
-                            <div class="insta-avatar-ring">
-                                <div class="insta-avatar-inner">CP</div>
-                            </div>
-                            <div class="insta-meta">
-                                <div class="insta-username-row">
-                                    <span class="insta-username">caseplanet.india_</span>[cite: 1]
-                                    <i class="fa-solid fa-circle-check insta-verified"></i>
-                                </div>
-                                <span class="insta-subtext">Founder & Marketing Lead</span>[cite: 1]
-                            </div>
-                        </div>
-
-                        <div class="insta-footer">
-                            <div class="insta-count">90K+ <span>Followers</span></div>[cite: 1]
-                            <div class="insta-btn"><i class="fa-brands fa-instagram"></i> Visit</div>
-                        </div>
-                    </a>
-
-                    <!-- Accent Analytics Impact Card -->
-                    <div class="yellow-accent-card bento-card">
-                        <div class="yellow-left">
-                            <div class="orb-graphic"></div>
-                        </div>
-                        <div class="yellow-right">
-                            <i class="fa-solid fa-arrow-up-right-from-square arrow-corner"></i>
-                            <div class="stat-number">5M+</div>[cite: 1]
-                            <div class="stat-label">Engagements & Data-Driven Growth.</div>[cite: 1]
-                        </div>
+                    <div>
+                        <div class="card-title">Eduport App</div>[cite: 1]
+                        <div class="card-subtitle">Managing 20+ Instagram pages and ranking in Top Performing Edtech Brands[cite: 1].</div>
                     </div>
+                    <div class="card-stat">20+ <span style="font-size: 1rem; color: var(--text-secondary);">Pages</span></div>[cite: 1]
+                </a>
 
-                </div>
+                <!-- Card 2: CasePlanet -->
+                <a href="https://www.instagram.com/caseplanet.india_" target="_blank" class="grid-card">[cite: 1]
+                    <div class="card-header-icon">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <i class="fa-solid fa-arrow-up-right-from-square card-arrow"></i>
+                    </div>
+                    <div>
+                        <div class="card-title">CasePlanet E-Com</div>[cite: 1]
+                        <div class="card-subtitle">Built from scratch, handling strategy, content, and e-commerce execution[cite: 1].</div>
+                    </div>
+                    <div class="card-stat">10K+ <span style="font-size: 1rem; color: var(--text-secondary);">Orders</span></div>[cite: 1]
+                </a>
+
+                <!-- Card 3: Personal Brand -->
+                <a href="https://www.instagram.com/rib_zee" target="_blank" class="grid-card">[cite: 1]
+                    <div class="card-header-icon">
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-solid fa-arrow-up-right-from-square card-arrow"></i>
+                    </div>
+                    <div>
+                        <div class="card-title">Creator Lab (@rib_zee)</div>[cite: 1]
+                        <div class="card-subtitle">Personal creator page testing viral hooks and trend-driven storytelling[cite: 1].</div>
+                    </div>
+                    <div class="card-stat">5M+ <span style="font-size: 1rem; color: var(--text-secondary);">Views</span></div>[cite: 1]
+                </a>
 
             </div>
+        </section>
 
-        </div>
+        <!-- Footer -->
+        <footer>
+            <div>© 2026 C Abdurabb. All rights reserved.</div>[cite: 1]
+            <div class="footer-links">
+                <a href="https://www.instagram.com/rib_zee" target="_blank">Instagram</a>[cite: 1]
+                <a href="https://www.linkedin.com/in/c-abdurabb-52840b2b6" target="_blank">LinkedIn</a>[cite: 1]
+                <a href="mailto:workwithcabdurabb@gmail.com">Email</a>[cite: 1]
+            </div>
+        </footer>
 
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const cards = document.querySelectorAll('.bento-card');
-            cards.forEach(card => {
-                card.addEventListener('mouseenter', () => {
-                    card.style.transition = 'transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-                });
-            });
-        });
-    </script>
 </body>
 </html>
