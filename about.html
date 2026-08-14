@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About — C Abdurabb</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-dark: #0b0c0e;
+            --surface-card: #121418;
+            --border-line: rgba(255, 255, 255, 0.08);
+            --border-line-active: rgba(255, 255, 255, 0.2);
+            --text-primary: #f4f4f6;
+            --text-secondary: #8e929a;
+            --accent-glow: rgba(56, 189, 248, 0.15);
+            
+            --font-serif: 'Playfair Display', Georgia, serif;
+            --font-sans: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-sans);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 2rem;
+            overflow-x: hidden;
+        }
+
+        .ambient-glow {
+            position: fixed;
+            top: -10%;
+            left: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, var(--accent-glow) 0%, rgba(0,0,0,0) 70%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .page-wrapper {
+            max-width: 1280px;
+            margin: 0 auto;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* --- NAVIGATION --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-line);
+            margin-bottom: 3.5rem;
+        }
+
+        .brand-logo {
+            font-family: var(--font-sans);
+            font-size: 1.1rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+
+        .brand-logo span {
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        nav {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--text-primary);
+        }
+
+        .cta-header-btn {
+            background: transparent;
+            border: 1px solid var(--border-line);
+            color: var(--text-primary);
+            padding: 8px 18px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .cta-header-btn:hover {
+            border-color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* --- ABOUT HERO --- */
+        .about-hero {
+            margin-bottom: 5rem;
+        }
+
+        .about-title-tag {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-headline {
+            font-family: var(--font-serif);
+            font-size: 3.8rem;
+            font-weight: 400;
+            line-height: 1.1;
+            letter-spacing: -1.5px;
+            max-width: 900px;
+            margin-bottom: 2.5rem;
+        }
+
+        .about-headline em {
+            font-style: italic;
+            color: var(--text-secondary);
+        }
+
+        /* --- CONTENT GRID --- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+            margin-bottom: 5rem;
+        }
+
+        .bio-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .info-card {
+            background: var(--surface-card);
+            border: 1px solid var(--border-line);
+            border-radius: 16px;
+            padding: 2rem;
+        }
+
+        .info-card h4 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .info-card p {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .bio-text {
+            display: flex;
+            flex-direction: column;
+            gap: 1.8rem;
+            font-size: 1.15rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+
+        .bio-text p strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* --- SKILLS & EXPERIENCE SECTION --- */
+        .skills-section {
+            border-top: 1px solid var(--border-line);
+            padding-top: 3.5rem;
+            margin-bottom: 5rem;
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: 2.2rem;
+            font-weight: 400;
+            margin-bottom: 2.5rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .skill-box {
+            background: var(--surface-card);
+            border: 1px solid var(--border-line);
+            border-radius: 16px;
+            padding: 2rem;
+        }
+
+        .skill-box h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            color: var(--text-primary);
+        }
+
+        .skill-box p {
+            font-size: 0.92rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            border-top: 1px solid var(--border-line);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 960px) {
+            .about-headline { font-size: 2.8rem; }
+            .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+            .skills-grid { grid-template-columns: 1fr; }
+            nav { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ambient-glow"></div>
+
+    <div class="page-wrapper">
+        
+        <!-- Header Nav -->
+        <header>
+            <a href="index.html" class="brand-logo">C. Abdurabb <span>/ About</span></a>[cite: 1]
+            <nav>
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link active">About Me</a>
+                <a href="index.html#work" class="nav-link">Selected Work</a>
+                <a href="mailto:workwithcabdurabb@gmail.com" class="nav-link">Contact</a>[cite: 1]
+            </nav>
+            <a href="mailto:workwithcabdurabb@gmail.com" class="cta-header-btn">Get in Touch</a>[cite: 1]
+        </header>
+
+        <!-- About Hero -->
+        <section class="about-hero">
+            <div class="about-title-tag">Biography & Philosophy</div>
+            <h1 class="about-headline">Bridging the gap between <em>creative intuition</em> and analytical precision.</h1>
+        </section>
+
+        <!-- About Details Grid -->
+        <section class="about-grid">
+            
+            <div class="bio-sidebar">
+                <div class="info-card">
+                    <h4>Current Role</h4>
+                    <p>Founder @ CasePlanet & Head Social Strategist</p>[cite: 1]
+                </div>
+                <div class="info-card">
+                    <h4>Education</h4>
+                    <p>MBA in Marketing & Data Analytics</p>[cite: 1]
+                </div>
+                <div class="info-card">
+                    <h4>Location</h4>
+                    <p>India / Remote Global</p>
+                </div>
+            </div>
+
+            <div class="bio-text">
+                <p>
+                    I am <strong>C Abdurabb</strong>, a Social Media Strategist and Brand Founder with a passion for building digital ecosystems that drive real enterprise value[cite: 1].
+                </p>
+                <p>
+                    Holding an <strong>MBA in Marketing & Data Analytics</strong>, I don't just focus on superficial metrics like likes or views—I engineer end-to-end social media funnels that convert passive audience attention into loyal brand communities and revenue[cite: 1].
+                </p>
+                <p>
+                    As the founder of <strong>CasePlanet</strong>, I grew our Instagram presence to over <strong>90,000 active followers</strong> and converted over 10,000 customers purely organically[cite: 1]. Simultaneously, my strategic management across 20+ Instagram pages for EdTech leaders like <strong>Eduport App</strong> has generated over 5 Million total engagements[cite: 1].
+                </p>
+            </div>
+
+        </section>
+
+        <!-- Core Competencies -->
+        <section class="skills-section">
+            <h2 class="section-title">Core Competencies</h2>
+            
+            <div class="skills-grid">
+                <div class="skill-box">
+                    <h3>Social Funnel Architecture</h3>
+                    <p>Designing complete top-of-funnel viral awareness engines that channel directly into bottom-of-funnel e-commerce sales.</p>
+                </div>
+                <div class="skill-box">
+                    <h3>Data-Driven Growth</h3>
+                    <p>Leveraging deep performance analytics to continuously optimize content hooks, retention rates, and audience engagement.</p>
+                </div>
+                <div class="skill-box">
+                    <h3>Brand Building & E-Com</h3>
+                    <p>End-to-end product brand development, community management, and customer acquisition strategies.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div>© 2026 C Abdurabb. All rights reserved.</div>[cite: 1]
+            <div class="footer-links">
+                <a href="https://www.instagram.com/rib_zee" target="_blank">Instagram</a>[cite: 1]
+                <a href="https://www.linkedin.com/in/c-abdurabb-52840b2b6" target="_blank">LinkedIn</a>[cite: 1]
+                <a href="mailto:workwithcabdurabb@gmail.com">Email</a>[cite: 1]
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>
