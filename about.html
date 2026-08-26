@@ -1,27 +1,29 @@
-<!DOCTYPE html>
+        <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About — C Abdurabb</title>
+    <title>C Abdurabb — Social Media Strategist & Founder</title>
     
-    <!-- Google Fonts -->
+    <!-- Google Fonts: Plus Jakarta Sans & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
-            --bg-light: #f4f3ef;
-            --bg-dark-section: #3b0b0e;
-            --text-dark: #111111;
-            --text-light: #f4f3ef;
-            --border-dark: #111111;
-            
-            --font-display: 'Anton', sans-serif;
+            --bg-color: #f7f9f8;
+            --text-main: #0d131a;
+            --text-muted: #626a73;
+            --accent-green: #00e599;
+            --accent-green-dark: #00c684;
+            --badge-bg: #e6faf2;
+            --dark-banner: #091319;
+            --border-color: #e2e8e5;
+            --font-heading: 'Plus Jakarta Sans', sans-serif;
             --font-body: 'Inter', sans-serif;
         }
 
@@ -34,193 +36,589 @@
         }
 
         body {
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-            min-height: 100vh;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            overflow-x: hidden;
+            line-height: 1.5;
         }
 
+        /* --- CONTAINER & HEADER --- */
         .container {
-            max-width: 1300px;
+            max-width: 1240px;
             margin: 0 auto;
-            padding: 2.5rem 2rem;
+            padding: 0 2rem;
         }
 
-        /* --- NAVIGATION --- */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding-bottom: 2rem;
-            border-bottom: 1px solid rgba(0,0,0,0.12);
-            margin-bottom: 4rem;
+            padding: 2rem 0;
         }
 
         .brand-logo {
-            font-family: var(--font-display);
-            font-size: 1.8rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--text-main);
             text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            background-color: var(--accent-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            color: var(--text-main);
         }
 
         nav {
             display: flex;
-            gap: 2.5rem;
+            align-items: center;
+            gap: 2.2rem;
         }
 
         .nav-link {
-            color: var(--text-dark);
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--text-main);
+        }
+
+        .nav-link.active::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background-color: var(--accent-green);
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            padding: 3rem 0 5rem 0;
+            position: relative;
+        }
+
+        /* Figma Bounding-Box Badge */
+        .figma-badge {
+            display: inline-block;
+            position: relative;
+            background-color: var(--badge-bg);
+            border: 1px solid var(--accent-green);
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 1.8rem;
+        }
+
+        /* Handles on handles corners */
+        .figma-badge::before, .figma-badge::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: #ffffff;
+            border: 1.5px solid var(--accent-green);
+        }
+
+        .figma-badge::before { top: -4px; left: -4px; }
+        .figma-badge::after { top: -4px; right: -4px; }
+
+        .badge-corner-bl, .badge-corner-br {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: #ffffff;
+            border: 1.5px solid var(--accent-green);
+        }
+        .badge-corner-bl { bottom: -4px; left: -4px; }
+        .badge-corner-br { bottom: -4px; right: -4px; }
+
+        .hero-title {
+            font-family: var(--font-heading);
+            font-size: clamp(2.8rem, 5vw, 4.2rem);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -1px;
+            color: var(--text-main);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-description {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            max-width: 480px;
+            margin-bottom: 2.5rem;
+        }
+
+        .action-group {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .btn-primary {
+            position: relative;
+            background-color: var(--text-main);
+            color: #ffffff;
+            padding: 14px 28px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 4px 4px 0px var(--accent-green);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px var(--accent-green);
+        }
+
+        .btn-secondary {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: opacity 0.2s ease;
+        }
+
+        .btn-secondary:hover {
+            opacity: 0.7;
+        }
+
+        .social-links-row {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .social-label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-right: 0.5rem;
+        }
+
+        .social-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-main);
             text-decoration: none;
             font-size: 0.95rem;
-            font-weight: 500;
-            text-transform: uppercase;
+            background: #ffffff;
+            transition: all 0.2s ease;
         }
 
-        .pill-badge {
-            display: inline-block;
-            border: 1px solid var(--text-dark);
-            padding: 6px 18px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: var(--text-dark);
-            text-decoration: none;
+        .social-icon.accent {
+            background-color: var(--accent-green);
+            border-color: var(--accent-green);
         }
 
-        /* --- ABOUT CONTENT --- */
-        .display-title {
-            font-family: var(--font-display);
-            font-size: clamp(3.5rem, 7vw, 6rem);
-            line-height: 0.95;
+        .social-icon:hover {
+            transform: translateY(-2px);
+        }
+
+        /* --- HERO PORTRAIT RIGHT SIDE --- */
+        .hero-image-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .green-blob-shape {
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            width: 380px;
+            height: 240px;
+            background: var(--accent-green);
+            border-radius: 90px 40px 100px 30px;
+            z-index: 1;
+        }
+
+        .zigzag-doodle {
+            position: absolute;
+            top: 20px;
+            left: -20px;
+            font-size: 2.5rem;
+            color: var(--text-main);
+            z-index: 3;
+        }
+
+        .portrait-card {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 380px;
+            aspect-ratio: 4/5;
+            background-color: #e5e5e5;
+            box-shadow: 12px 12px 0px var(--text-main);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .portrait-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Rotating Circular Badge */
+        .rotating-badge {
+            position: absolute;
+            left: -50px;
+            bottom: 80px;
+            width: 110px;
+            height: 110px;
+            z-index: 4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .rotating-text {
+            width: 100%;
+            height: 100%;
+            animation: rotateText 12s linear infinite;
+        }
+
+        .rotating-text text {
+            font-size: 9px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
+            fill: var(--text-main);
+        }
+
+        .badge-arrow {
+            position: absolute;
+            font-size: 1.2rem;
+            color: var(--text-main);
+        }
+
+        @keyframes rotateText {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* --- TICKER BANNER --- */
+        .ticker-section {
+            background-color: var(--dark-banner);
+            color: #ffffff;
+            padding: 1.8rem 0;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .ticker-track {
+            display: inline-flex;
+            align-items: center;
+            gap: 3rem;
+            animation: scrollTicker 20s linear infinite;
+        }
+
+        .ticker-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 2rem;
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .ticker-star {
+            color: var(--accent-green);
+            font-size: 1rem;
+        }
+
+        @keyframes scrollTicker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* --- METRICS / SERVICES SECTION --- */
+        .section-padding {
+            padding: 5rem 0;
+        }
+
+        .section-title-wrapper {
             margin-bottom: 3rem;
         }
 
-        .bio-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.8fr;
-            gap: 4rem;
-            border-top: 1px solid var(--border-dark);
-            padding-top: 3rem;
-            margin-bottom: 6rem;
+        .sub-heading {
+            color: var(--accent-green-dark);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
         }
 
-        .sidebar-info {
-            display: flex;
-            flex-direction: column;
+        .section-heading {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            font-weight: 800;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
         }
 
-        .info-group h4 {
-            font-family: var(--font-display);
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            color: var(--text-dark);
-            margin-bottom: 0.4rem;
+        .card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            padding: 2.5rem 2rem;
+            border-radius: 8px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
-        .info-group p {
-            font-size: 1rem;
-            color: #444;
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.05);
         }
 
-        .main-bio-text {
+        .card-number {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .card-title {
+            font-family: var(--font-heading);
             font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+        }
+
+        .card-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
             line-height: 1.6;
-            color: #222;
-            display: flex;
-            flex-direction: column;
-            gap: 1.8rem;
         }
 
         /* --- FOOTER --- */
         footer {
-            border-top: 1px solid var(--border-dark);
-            padding-top: 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            border-top: 1px solid var(--border-color);
+            padding: 2.5rem 0;
+            text-align: center;
+            color: var(--text-muted);
             font-size: 0.9rem;
-            font-weight: 500;
         }
 
-        .footer-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .footer-links a {
-            color: var(--text-dark);
-            text-decoration: none;
-            text-transform: uppercase;
-        }
-
-        @media (max-width: 800px) {
-            .bio-grid { grid-template-columns: 1fr; }
-            nav { display: none; }
+        /* --- RESPONSIVE --- */
+        @media (max-width: 992px) {
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+                text-align: center;
+            }
+            .hero-description {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .action-group, .social-links-row {
+                justify-content: center;
+            }
+            .rotating-badge {
+                left: 10px;
+            }
+            nav {
+                display: none; /* Can be toggled with JS */
+            }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        
+        <!-- Navigation Header -->
         <header>
-            <a href="index.html" class="brand-logo">C. ABDURABB</a>
+            <a href="#" class="brand-logo">
+                <div class="logo-icon"><i class="fa-solid fa-bolt"></i></div>
+                <span>Abdurabb</span>
+            </a>
             <nav>
-                <a href="index.html" class="nav-link">Home</a>
-                <a href="about.html" class="nav-link">About Me</a>
-                <a href="index.html#work" class="nav-link">Selected Work</a>
-                <a href="mailto:workwithcabdurabb@gmail.com" class="nav-link">Contact</a>
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
             </nav>
-            <a href="mailto:workwithcabdurabb@gmail.com" class="pill-badge">Get In Touch</a>
         </header>
 
-        <section>
-            <span class="pill-badge" style="margin-bottom: 1.5rem;">Biography</span>
-            <h1 class="display-title">BRIDGING ANALYTICAL PRECISION WITH VIRAL CREATIVITY</h1>
-
-            <div class="bio-grid">
-                <div class="sidebar-info">
-                    <div class="info-group">
-                        <h4>CURRENT FOCUS</h4>
-                        <p>Founder @ CasePlanet & Head Social Strategist</p>
-                    </div>
-                    <div class="info-group">
-                        <h4>DEGREE</h4>
-                        <p>MBA in Marketing & Data Analytics</p>
-                    </div>
-                    <div class="info-group">
-                        <h4>LOCATION</h4>
-                        <p>India / Remote Global</p>
-                    </div>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <div class="figma-badge">
+                    Hi everyone 👋, I'm C Abdurabb
+                    <div class="badge-corner-bl"></div>
+                    <div class="badge-corner-br"></div>
                 </div>
 
-                <div class="main-bio-text">
-                    <p>
-                        I am <strong>C Abdurabb</strong>, a Social Media Strategist and Founder focused on crafting repeatable growth engines for direct-to-consumer brands and media properties.
-                    </p>
-                    <p>
-                        Equipped with an <strong>MBA in Marketing & Data Analytics</strong>, I bridge creative instinct with empirical testing—turning audience attention into measurable business outcomes.
-                    </p>
-                    <p>
-                        Through founding <strong>CasePlanet</strong>, I engineered an organic social ecosystem scaling to <strong>90,000+ followers</strong> and over 10,000 customer orders. In parallel, managing social accounts across EdTech brands like <strong>Eduport App</strong> has resulted in over 5 Million organic video impressions.
-                    </p>
+                <h1 class="hero-title">Social Media Strategist Based in India</h1>
+
+                <p class="hero-description">
+                    I'm a brand strategist and founder passionate about building organic growth engines, short-form viral hooks, and data-driven e-commerce funnels.
+                </p>
+
+                <div class="action-group">
+                    <a href="mailto:workwithcabdurabb@gmail.com" class="btn-primary">
+                        Get In Touch <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                    <a href="#" class="btn-secondary" id="downloadCvBtn">
+                        Download CV <i class="fa-solid fa-download"></i>
+                    </a>
+                </div>
+
+                <div class="social-links-row">
+                    <span class="social-label">Find me on:</span>
+                    <a href="#" class="social-icon"><i class="fa-globe"></i></a>
+                    <a href="https://www.instagram.com/rib_zee" target="_blank" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/c-abdurabb-52840b2b6" target="_blank" class="social-icon accent"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <!-- Portrait & Graphic Shapes -->
+            <div class="hero-image-wrapper">
+                <div class="zigzag-doodle"><i class="fa-solid fa-wave-square"></i></div>
+                <div class="green-blob-shape"></div>
+
+                <!-- Rotating Badge -->
+                <div class="rotating-badge">
+                    <svg class="rotating-text" viewBox="0 0 100 100">
+                        <path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none"/>
+                        <text><textPath href="#circlePath">explore more • about me • </textPath></text>
+                    </svg>
+                    <div class="badge-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+                </div>
+
+                <div class="portrait-card">
+                    <img src="WhatsApp Image 2026-08-15 at 01.52.07.jpeg" alt="C Abdurabb Portrait" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?fit=crop&w=600&h=750'">
                 </div>
             </div>
         </section>
-
-        <footer>
-            <div>© 2026 C ABDURABB. ALL RIGHTS RESERVED.</div>
-            <div class="footer-links">
-                <a href="https://www.instagram.com/rib_zee" target="_blank">Instagram</a>
-                <a href="https://www.linkedin.com/in/c-abdurabb-52840b2b6" target="_blank">LinkedIn</a>
-                <a href="mailto:workwithcabdurabb@gmail.com">Email</a>
-            </div>
-        </footer>
-
     </div>
 
+    <!-- Dark Ticker Banner -->
+    <section class="ticker-section">
+        <div class="ticker-track">
+            <div class="ticker-item"><span>Social Media Strategy</span> <i class="fa-solid fa-sparkles ticker-star"></i></div>
+            <div class="ticker-item"><span>Organic Growth Funnels</span> <i class="fa-solid fa-sparkles ticker-star"></i></div>
+            <div class="ticker-item"><span>E-Commerce Scaling</span> <i class="fa-solid fa-sparkles ticker-star"></i></div>
+            <div class="ticker-item"><span>Brand Identity</span> <i class="fa-solid fa-sparkles ticker-star"></i></div>
+            <div class="ticker-item"><span>Data Analytics</span> <i class="fa-solid fa-sparkles ticker-star"></i></div>
+            <!-- Duplicated for seamless scroll -->
+            <div class="ticker-item"><span>Social Media Strategy</span> <i class="fa-solid fa-sparkles ticker-star"></i></div>
+            <div class="ticker-item"><span>Organic Growth Funnels</span> <i class="fa-solid fa-sparkles ticker-star"></i></div>
+            <div class="ticker-item"><span>E-Commerce Scaling</span> <i class="fa-solid fa-sparkles ticker-star"></i></div>
+            <div class="ticker-item"><span>Brand Identity</span> <i class="fa-solid fa-sparkles ticker-star"></i></div>
+        </div>
+    </section>
+
+    <!-- Services / Metrics Section -->
+    <div class="container">
+        <section class="section-padding" id="services">
+            <div class="section-title-wrapper">
+                <div class="sub-heading">Track Record</div>
+                <h2 class="section-heading">Delivering Impact & Reach</h2>
+            </div>
+
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-number">90K+</div>
+                    <h3 class="card-title">Organic Audience</h3>
+                    <p class="card-desc">Scaled Instagram communities purely through organic video architecture and data analysis.</p>
+                </div>
+                <div class="card">
+                    <div class="card-number">10K+</div>
+                    <h3 class="card-title">E-Commerce Orders</h3>
+                    <p class="card-desc">Converted content views directly into customer sales for CasePlanet direct-to-consumer store.</p>
+                </div>
+                <div class="card">
+                    <div class="card-number">5M+</div>
+                    <h3 class="card-title">Video Impressions</h3>
+                    <p class="card-desc">Generated viral short-form reach across educational and tech brand assets.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 C Abdurabb. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Smooth Scroll for Navigation Links
+            const navLinks = document.querySelectorAll('nav a[href^="#"]');
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    link.classList.add('active');
+
+                    const targetId = link.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+
+            // Download CV Alert Demo
+            const cvBtn = document.getElementById('downloadCvBtn');
+            if (cvBtn) {
+                cvBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    alert('CV download started.');
+                });
+            }
+        });
+    </script>
 </body>
 </html>
