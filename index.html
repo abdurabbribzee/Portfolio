@@ -849,6 +849,69 @@
             nav .nav-link:hover { background: var(--bg-color); }
         }
 
+
+        /* --- CREATOR NETWORK --- */
+        .crew-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.2rem;
+        }
+
+        .crew-card {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 1.1rem 1.2rem;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+
+        .crew-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.06);
+            border-color: var(--accent-green);
+        }
+
+        .crew-avatar {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid var(--accent-green);
+            flex-shrink: 0;
+        }
+
+        .crew-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+        .crew-info { min-width: 0; }
+
+        .crew-name {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 1rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .crew-reach {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--accent-green-dark);
+        }
+
+        .crew-handle {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
     </style>
 </head>
 <body>
@@ -1138,6 +1201,80 @@
                         <div class="net-name">Commerce Plus One</div>
                         <div class="net-followers">519 followers</div>
                         <div class="net-handle">@eduport_commerce_plusone</div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Creator Network -->
+        <section class="section-padding" id="network-creators">
+            <div class="section-title-wrapper">
+                <div class="sub-heading">Creator Network</div>
+                <h2 class="section-heading">Three Million Followers, One Phone Book</h2>
+                <p class="section-intro">Tech and media creators I have run collaborations with for Case Planet &mdash; product launches, reviews and promotional campaigns. Distribution I can reach directly rather than buy cold.</p>
+            </div>
+
+            <div class="crew-grid">
+                <a href="https://www.instagram.com/mrperfecttech" target="_blank" rel="noopener" class="crew-card">
+                    <div class="crew-avatar"><img src="assets/inf-mrperfect.jpg" alt="@mrperfecttech profile picture" loading="lazy" width="100" height="100"></div>
+                    <div class="crew-info">
+                        <div class="crew-name">Nitin Raj</div>
+                        <div class="crew-reach">1M followers</div>
+                        <div class="crew-handle">@mrperfecttech</div>
+                    </div>
+                </a>
+
+                <a href="https://www.instagram.com/gopikrishna_techy" target="_blank" rel="noopener" class="crew-card">
+                    <div class="crew-avatar"><img src="assets/inf-gopikrishna.jpg" alt="@gopikrishna_techy profile picture" loading="lazy" width="100" height="100"></div>
+                    <div class="crew-info">
+                        <div class="crew-name">Gopikrishna Techy</div>
+                        <div class="crew-reach">842K followers</div>
+                        <div class="crew-handle">@gopikrishna_techy</div>
+                    </div>
+                </a>
+
+                <a href="https://www.instagram.com/ricky.rodger" target="_blank" rel="noopener" class="crew-card">
+                    <div class="crew-avatar"><img src="assets/inf-ricky.jpg" alt="@ricky.rodger profile picture" loading="lazy" width="100" height="100"></div>
+                    <div class="crew-info">
+                        <div class="crew-name">Ricky Rodger</div>
+                        <div class="crew-reach">352K followers</div>
+                        <div class="crew-handle">@ricky.rodger</div>
+                    </div>
+                </a>
+
+                <a href="https://www.instagram.com/sarathneontech" target="_blank" rel="noopener" class="crew-card">
+                    <div class="crew-avatar"><img src="assets/inf-sarath.jpg" alt="@sarathneontech profile picture" loading="lazy" width="100" height="100"></div>
+                    <div class="crew-info">
+                        <div class="crew-name">Sarath S</div>
+                        <div class="crew-reach">329K followers</div>
+                        <div class="crew-handle">@sarathneontech</div>
+                    </div>
+                </a>
+
+                <a href="https://www.instagram.com/gadgets_one_malayalam_official" target="_blank" rel="noopener" class="crew-card">
+                    <div class="crew-avatar"><img src="assets/inf-gadgetsone.jpg" alt="@gadgets_one_malayalam_official profile picture" loading="lazy" width="100" height="100"></div>
+                    <div class="crew-info">
+                        <div class="crew-name">Gadgets One Malayalam</div>
+                        <div class="crew-reach">325K followers</div>
+                        <div class="crew-handle">@gadgets_one_malayalam_official</div>
+                    </div>
+                </a>
+
+                <a href="https://www.instagram.com/reeloadmedia" target="_blank" rel="noopener" class="crew-card">
+                    <div class="crew-avatar"><img src="assets/inf-reeload.jpg" alt="@reeloadmedia profile picture" loading="lazy" width="100" height="100"></div>
+                    <div class="crew-info">
+                        <div class="crew-name">Reeload Media</div>
+                        <div class="crew-reach">194K followers</div>
+                        <div class="crew-handle">@reeloadmedia</div>
+                    </div>
+                </a>
+
+                <a href="https://www.instagram.com/smtmalayalam" target="_blank" rel="noopener" class="crew-card">
+                    <div class="crew-avatar"><img src="assets/inf-smt.jpg" alt="@smtmalayalam profile picture" loading="lazy" width="100" height="100"></div>
+                    <div class="crew-info">
+                        <div class="crew-name">Shahul Ameen</div>
+                        <div class="crew-reach">45K followers</div>
+                        <div class="crew-handle">@smtmalayalam</div>
                     </div>
                 </a>
             </div>
