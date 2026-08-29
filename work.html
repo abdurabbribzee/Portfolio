@@ -312,6 +312,90 @@
             .reel-card { grid-template-columns: 1fr; gap: 1.8rem; }
             .reel-thumb { max-width: 260px; }
         }
+
+        /* --- FEATURED / RESHARED --- */
+        .proof-section { padding: 1rem 0 5rem 0; }
+
+        .proof-head {
+            font-family: var(--font-heading);
+            font-size: 1.9rem;
+            font-weight: 800;
+            letter-spacing: -0.6px;
+            margin-bottom: 0.6rem;
+        }
+
+        .proof-lede {
+            color: var(--text-muted);
+            font-size: 0.98rem;
+            margin-bottom: 2.2rem;
+            max-width: 560px;
+        }
+
+        .proof-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .proof-card {
+            display: flex;
+            flex-direction: column;
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 1.8rem;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+
+        .proof-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 22px rgba(0,0,0,0.06);
+            border-color: var(--accent-green);
+        }
+
+        .proof-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: var(--badge-bg);
+            border: 1px solid var(--accent-green);
+            color: var(--accent-green-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.05rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .proof-title {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            font-weight: 800;
+            line-height: 1.3;
+            margin-bottom: 0.6rem;
+        }
+
+        .proof-note {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 1.4rem;
+        }
+
+        .proof-go {
+            margin-top: auto;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: gap 0.2s ease;
+        }
+
+        .proof-card:hover .proof-go { gap: 12px; }
+
     </style>
 </head>
 <body>
@@ -407,7 +491,63 @@
                 </div>
             </article>
 
+
+            <!-- Sevens football -->
+            <article class="reel-card">
+                <a href="https://www.instagram.com/reel/C1uPuJjJjuS/" target="_blank" rel="noopener" class="reel-thumb">
+                    <img src="assets/reel-sevens.jpg" alt="Sevens football in the rain reel thumbnail" loading="lazy">
+                    <div class="reel-play"><i class="fa-solid fa-circle-play"></i></div>
+                </a>
+                <div class="reel-body">
+                    <div class="reel-meta">
+                        <span class="reel-account">@rib_zee</span>
+                        <span class="reel-dot">&bull;</span>
+                        <span>5 January 2024</span>
+                        <span class="reel-dot">&bull;</span>
+                        <span class="reel-tag">Native football culture</span>
+                    </div>
+                    <h2 class="reel-hook">Sevens football, in the rain, shot the way locals actually see it.</h2>
+                    <p class="reel-note">Kerala&rsquo;s Sevens football culture filmed on the ground at Thrithala &mdash; floodlights, mud and a full gallery. Native subject matter shot and cut for the audience that lives it, not for an algorithm.</p>
+                    <div class="reel-caption">
+                        <span>Caption</span>
+                        മഴ ⛈️ കട്ട സെവൻസ് -ആഹാ !!
+                    </div>
+                    <div class="reel-stats">
+                        <div>
+                            <div class="reel-stat-num">110K</div>
+                            <div class="reel-stat-label">Likes</div>
+                        </div>
+                        <div>
+                            <div class="reel-stat-num">477</div>
+                            <div class="reel-stat-label">Comments</div>
+                        </div>
+                    </div>
+                    <a href="https://www.instagram.com/reel/C1uPuJjJjuS/" target="_blank" rel="noopener" class="reel-cta">Watch the reel <i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </article>
+
         </div>
+
+        <section class="proof-section">
+            <h2 class="proof-head">Featured &amp; Reshared</h2>
+            <p class="proof-lede">When the work travels beyond my own audience.</p>
+
+            <div class="proof-grid">
+                <a href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MTE2NTQzMzM4Mzc4NDY5?story_media_id=3470191697537478077" target="_blank" rel="noopener" class="proof-card">
+                    <div class="proof-icon"><i class="fa-solid fa-share-nodes"></i></div>
+                    <h3 class="proof-title">Dabzee reshared my video</h3>
+                    <p class="proof-note">One of Kerala&rsquo;s biggest food creators picked up and reshared a video of mine to his own audience.</p>
+                    <span class="proof-go">View story <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+
+                <a href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MTE2NTQzMzM4Mzc4NDY5?story_media_id=3905463233359335175" target="_blank" rel="noopener" class="proof-card">
+                    <div class="proof-icon"><i class="fa-solid fa-microphone-lines"></i></div>
+                    <h3 class="proof-title">Creator at Kerala Startup Carnival 2026</h3>
+                    <p class="proof-note">Featured as a creator at Kerala&rsquo;s first two-day residential startup carnival, 30&ndash;31 May 2026 at LEAD College, Palakkad.</p>
+                    <span class="proof-go">View story <i class="fa-solid fa-arrow-right"></i></span>
+                </a>
+            </div>
+        </section>
     </div>
 
     <footer>
