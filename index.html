@@ -961,6 +961,109 @@
             margin-top: 0.45rem;
         }
 
+
+        /* --- EXPERIENCE CARDS --- */
+        .exp-card {
+            display: grid;
+            grid-template-columns: 72px 1fr;
+            gap: 1.8rem;
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+
+        .exp-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 28px rgba(0,0,0,0.06);
+            border-color: var(--accent-green);
+        }
+
+        .exp-logo {
+            width: 72px;
+            height: 72px;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            background: #f2f5f4;
+        }
+
+        .exp-logo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+        .exp-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.25rem;
+        }
+
+        .exp-role2 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+        }
+
+        .exp-datepill {
+            background: var(--badge-bg);
+            border: 1px solid var(--accent-green);
+            color: var(--accent-green-dark);
+            border-radius: 50px;
+            padding: 5px 14px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .exp-org {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .exp-desc2 {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.65;
+            margin-bottom: 1.5rem;
+        }
+
+        .exp-points2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 1.3rem;
+        }
+
+        .exp-point2 {
+            border-left: 3px solid var(--accent-green);
+            padding-left: 1rem;
+        }
+
+        .exp-point2 .lbl {
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-green-dark);
+            margin-bottom: 0.3rem;
+        }
+
+        .exp-point2 p {
+            font-size: 0.87rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 700px) {
+            .exp-card { grid-template-columns: 1fr; gap: 1.2rem; padding: 1.6rem; }
+        }
+
     </style>
 </head>
 <body>
@@ -994,7 +1097,7 @@
                 <h1 class="hero-title">Social Media Strategist Based in India</h1>
 
                 <p class="hero-description">
-                    5+ years building organic growth engines, short-form video systems and conversion-focused e-commerce funnels. Founder of <strong>Case Planet</strong>, scaled to 101K followers and 10,000+ customers from a standing start. Currently driving platform strategy at <strong>Eduport</strong>, where I grew total reach from 12M to 45M across 30+ channels.
+                    5+ years building organic growth engines, short-form video systems and conversion-focused e-commerce funnels. Founder of <strong>Case Planet</strong>, scaled to 101K followers and 10,000+ customers from a standing start. Currently driving platform strategy at <strong>Eduport</strong>, running 30+ channels and a 340K-follower Instagram network.
                 </p>
 
                 <div class="action-group">
@@ -1168,7 +1271,7 @@
             <div class="section-title-wrapper">
                 <div class="sub-heading">Eduport Network</div>
                 <h2 class="section-heading">One Brand, Nine Audiences</h2>
-                <p class="section-intro">Nine of the 30+ accounts I manage at Eduport, each with its own audience, exam cycle and content strategy &mdash; around 340K followers between them. Total network reach grew from 12M to 45M under this structure.</p>
+                <p class="section-intro">Nine of the 30+ accounts I manage at Eduport, each with its own audience, exam cycle and content strategy &mdash; around 340K followers between them, from the 89K flagship down to new exam-specific channels.</p>
             </div>
 
             <div class="net-grid">
@@ -1531,89 +1634,93 @@
                 <h2 class="section-heading">Where I&rsquo;ve Done The Work</h2>
             </div>
 
-            <div class="exp-list">
-
-                <div class="exp-row">
-                    <div class="exp-meta">
-                        <div class="exp-date">2025 &mdash; Present</div>
-                        <div class="exp-company">Eduport Pvt Ltd</div>
-                    </div>
+                <div class="exp-card">
+                    <div class="exp-logo"><img src="assets/dp-ed-app.jpg" alt="Eduport logo" loading="lazy"></div>
                     <div>
-                        <h3 class="exp-role">Social Media Strategist</h3>
-                        <p class="exp-desc">Running platform-specific strategy across 30+ channels &mdash; 10 Instagram, 10 YouTube, 5 WhatsApp and 5 Facebook &mdash; using Interakt, Meta Ads, Super Profile and Captions AI.</p>
-                        <div class="exp-points">
-                            <div class="exp-point">
-                                <div class="exp-point-label">Reach</div>
-                                <p>Grew total reach from 12M to 45M (+200%) and added 20K+ followers.</p>
+                        <div class="exp-top">
+                            <h3 class="exp-role2">Social Media Strategist</h3>
+                            <span class="exp-datepill">2025 &mdash; Present</span>
+                        </div>
+                        <div class="exp-org">Eduport Pvt Ltd</div>
+                        <p class="exp-desc2">Running platform-specific strategy across 30+ channels &mdash; 10 Instagram, 10 YouTube, 5 WhatsApp and 5 Facebook &mdash; each segment carrying its own audience, exam cycle and content plan. Tooling: Interakt, Meta Ads, Super Profile and Captions AI.</p>
+                        <div class="exp-points2">
+                            <div class="exp-point2">
+                                <div class="lbl">Network</div>
+                                <p>Nine Instagram channels under management, around 340K followers between them, from the 89K flagship down to new exam-specific accounts.</p>
                             </div>
-                            <div class="exp-point">
-                                <div class="exp-point-label">Content</div>
-                                <p>Produced assets hitting 3M+ views in 10 days, several others past 500K.</p>
+                            <div class="exp-point2">
+                                <div class="lbl">Content</div>
+                                <p>Shot and edited the most-reached video on the flagship account &mdash; 133K likes, produced same-day with no budget behind it.</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="exp-row">
-                    <div class="exp-meta">
-                        <div class="exp-date">2023 &mdash; Present</div>
-                        <div class="exp-company">Case Planet</div>
-                    </div>
+                <div class="exp-card">
+                    <div class="exp-logo"><img src="assets/dp-caseplanet.jpg" alt="Case Planet logo" loading="lazy"></div>
                     <div>
-                        <h3 class="exp-role">Founder &amp; Marketing Strategist</h3>
-                        <p class="exp-desc">Founded and scaled a direct-to-consumer brand from zero, owning strategy, content, community and campaign execution end to end.</p>
-                        <div class="exp-points">
-                            <div class="exp-point">
-                                <div class="exp-point-label">Growth</div>
-                                <p>10,000+ customers and 101K followers built through organic social.</p>
+                        <div class="exp-top">
+                            <h3 class="exp-role2">Founder &amp; Marketing Strategist</h3>
+                            <span class="exp-datepill">2023 &mdash; Present</span>
+                        </div>
+                        <div class="exp-org">Case Planet</div>
+                        <p class="exp-desc2">Founded and scaled a direct-to-consumer phone case brand from zero, owning strategy, content, community and campaign execution end to end.</p>
+                        <div class="exp-points2">
+                            <div class="exp-point2">
+                                <div class="lbl">Growth</div>
+                                <p>10,000+ customers and 101K followers built through organic social alone.</p>
                             </div>
-                            <div class="exp-point">
-                                <div class="exp-point-label">Partnerships</div>
-                                <p>Collaborated with 20+ tech influencers on promotions and showcases.</p>
+                            <div class="exp-point2">
+                                <div class="lbl">Partnerships</div>
+                                <p>20+ tech creator collaborations for launches, reviews and showcases.</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="exp-row">
-                    <div class="exp-meta">
-                        <div class="exp-date">2025</div>
-                        <div class="exp-company">GADPRO</div>
-                    </div>
+                <div class="exp-card">
+                    <div class="exp-logo"><img src="assets/dp-gadpro.jpg" alt="GADPRO logo" loading="lazy"></div>
                     <div>
-                        <h3 class="exp-role">Sales &amp; Marketing Intern</h3>
-                        <p class="exp-desc">Executed targeted Meta Ads and Instagram promotion campaigns, and produced the creative that carried them.</p>
-                        <div class="exp-points">
-                            <div class="exp-point">
-                                <div class="exp-point-label">Pipeline</div>
+                        <div class="exp-top">
+                            <h3 class="exp-role2">Sales &amp; Marketing Intern</h3>
+                            <span class="exp-datepill">2025</span>
+                        </div>
+                        <div class="exp-org">GADPRO</div>
+                        <p class="exp-desc2">Executed targeted Meta Ads and Instagram promotion campaigns for this gadget retailer, and produced the creative that carried them.</p>
+                        <div class="exp-points2">
+                            <div class="exp-point2">
+                                <div class="lbl">Pipeline</div>
                                 <p>+30% brand reach and 50+ qualified leads inside two months.</p>
                             </div>
-                            <div class="exp-point">
-                                <div class="exp-point-label">Creative</div>
+                            <div class="exp-point2">
+                                <div class="lbl">Creative</div>
                                 <p>Ad creatives and campaign visuals that lifted engagement by 25%.</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="exp-row">
-                    <div class="exp-meta">
-                        <div class="exp-date">2020 &mdash; Present</div>
-                        <div class="exp-company">Freelance</div>
-                    </div>
+                <div class="exp-card">
+                    <div class="exp-logo"><img src="WhatsApp%20Image%202026-08-15%20at%2001.52.07.jpeg" alt="C Abdurabb" loading="lazy"></div>
                     <div>
-                        <h3 class="exp-role">Social Media Manager</h3>
-                        <p class="exp-desc">5+ years managing and growing pages across regional, campus, event and commerce niches &mdash; from cold start to community scale.</p>
-                        <div class="exp-points">
-                            <div class="exp-point">
-                                <div class="exp-point-label">Portfolio</div>
-                                <p>20+ brand accounts managed and scaled, together generating 200M+ dashboard views.</p>
+                        <div class="exp-top">
+                            <h3 class="exp-role2">Social Media Manager</h3>
+                            <span class="exp-datepill">2020 &mdash; Present</span>
+                        </div>
+                        <div class="exp-org">Freelance</div>
+                        <p class="exp-desc2">5+ years managing and growing pages across regional, campus, event and commerce niches &mdash; from cold start to community scale.</p>
+                        <div class="exp-points2">
+                            <div class="exp-point2">
+                                <div class="lbl">Portfolio</div>
+                                <p>20+ brand accounts managed and scaled, several past a million organic reach.</p>
+                            </div>
+                            <div class="exp-point2">
+                                <div class="lbl">Network</div>
+                                <p>200+ creator connections across Kerala, 27 collaborated with directly.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-
-            </div>
         </section>
 
         <!-- Expertise -->
