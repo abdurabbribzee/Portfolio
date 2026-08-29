@@ -720,6 +720,77 @@
             .exp-row { grid-template-columns: 1fr; gap: 1.2rem; }
             .contact-block { grid-template-columns: 1fr; padding: 3rem 2rem; }
         }
+
+        /* --- MANAGED NETWORK --- */
+        .section-intro {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.6;
+            max-width: 660px;
+            margin-top: 1rem;
+        }
+
+        .net-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+            gap: 1rem;
+        }
+
+        .net-card {
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1rem 1.1rem;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+
+        .net-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.05);
+            border-color: var(--accent-green);
+        }
+
+        .net-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid var(--accent-green);
+            flex-shrink: 0;
+        }
+
+        .net-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+        .net-info { min-width: 0; }
+
+        .net-name {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 0.95rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .net-followers {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--accent-green-dark);
+        }
+
+        .net-handle {
+            font-size: 0.72rem;
+            color: var(--text-muted);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
     </style>
 </head>
 <body>
@@ -913,6 +984,98 @@
                     <div class="page-foot"><span class="page-stat">Fully organic</span><span class="page-go">View page <i class="fa-solid fa-arrow-right"></i></span></div>
                 </a>
 
+            </div>
+        </section>
+
+        <!-- Eduport Network -->
+        <section class="section-padding" id="network">
+            <div class="section-title-wrapper">
+                <div class="sub-heading">Eduport Network</div>
+                <h2 class="section-heading">The Channels I Run Day To Day</h2>
+                <p class="section-intro">Nine of the 30+ accounts I manage at Eduport, each with its own audience, exam cycle and content strategy &mdash; around 340K followers between them. Total network reach grew from 12M to 45M under this structure.</p>
+            </div>
+
+            <div class="net-grid">
+                <a href="https://www.instagram.com/eduport.app" target="_blank" rel="noopener" class="net-card">
+                    <div class="net-avatar"><img src="assets/dp-ed-app.jpg" alt="@eduport.app profile picture" loading="lazy" width="100" height="100"></div>
+                    <div class="net-info">
+                        <div class="net-name">Eduport Learning App</div>
+                        <div class="net-followers">89K followers</div>
+                        <div class="net-handle">@eduport.app</div>
+                    </div>
+                </a>
+
+                <a href="https://www.instagram.com/plusone.science.eduport" target="_blank" rel="noopener" class="net-card">
+                    <div class="net-avatar"><img src="assets/dp-ed-plusone-science.jpg" alt="@plusone.science.eduport profile picture" loading="lazy" width="100" height="100"></div>
+                    <div class="net-info">
+                        <div class="net-name">Plus One Science</div>
+                        <div class="net-followers">72K followers</div>
+                        <div class="net-handle">@plusone.science.eduport</div>
+                    </div>
+                </a>
+
+                <a href="https://www.instagram.com/eduport._sslc" target="_blank" rel="noopener" class="net-card">
+                    <div class="net-avatar"><img src="assets/dp-ed-sslc.jpg" alt="@eduport._sslc profile picture" loading="lazy" width="100" height="100"></div>
+                    <div class="net-info">
+                        <div class="net-name">Eduport SSLC</div>
+                        <div class="net-followers">63K followers</div>
+                        <div class="net-handle">@eduport._sslc</div>
+                    </div>
+                </a>
+
+                <a href="https://www.instagram.com/plus.two.eduport" target="_blank" rel="noopener" class="net-card">
+                    <div class="net-avatar"><img src="assets/dp-ed-plustwo.jpg" alt="@plus.two.eduport profile picture" loading="lazy" width="100" height="100"></div>
+                    <div class="net-info">
+                        <div class="net-name">Plus Two Eduport</div>
+                        <div class="net-followers">48K followers</div>
+                        <div class="net-handle">@plus.two.eduport</div>
+                    </div>
+                </a>
+
+                <a href="https://www.instagram.com/eduport.class_9" target="_blank" rel="noopener" class="net-card">
+                    <div class="net-avatar"><img src="assets/dp-ed-class9.jpg" alt="@eduport.class_9 profile picture" loading="lazy" width="100" height="100"></div>
+                    <div class="net-info">
+                        <div class="net-name">Eduport Class 9</div>
+                        <div class="net-followers">36K followers</div>
+                        <div class="net-handle">@eduport.class_9</div>
+                    </div>
+                </a>
+
+                <a href="https://www.instagram.com/eduportcommerce_plustwo" target="_blank" rel="noopener" class="net-card">
+                    <div class="net-avatar"><img src="assets/dp-ed-commerce-plustwo.jpg" alt="@eduportcommerce_plustwo profile picture" loading="lazy" width="100" height="100"></div>
+                    <div class="net-info">
+                        <div class="net-name">Commerce Plus Two</div>
+                        <div class="net-followers">29K followers</div>
+                        <div class="net-handle">@eduportcommerce_plustwo</div>
+                    </div>
+                </a>
+
+                <a href="https://www.instagram.com/eduport.neet" target="_blank" rel="noopener" class="net-card">
+                    <div class="net-avatar"><img src="assets/dp-ed-neet.jpg" alt="@eduport.neet profile picture" loading="lazy" width="100" height="100"></div>
+                    <div class="net-info">
+                        <div class="net-name">Eduport NEET</div>
+                        <div class="net-followers">1,821 followers</div>
+                        <div class="net-handle">@eduport.neet</div>
+                    </div>
+                </a>
+
+                <a href="https://www.instagram.com/eduport_jee_keam" target="_blank" rel="noopener" class="net-card">
+                    <div class="net-avatar"><img src="assets/dp-ed-jee-keam.jpg" alt="@eduport_jee_keam profile picture" loading="lazy" width="100" height="100"></div>
+                    <div class="net-info">
+                        <div class="net-name">Eduport JEE &amp; KEAM</div>
+                        <div class="net-followers">1,004 followers</div>
+                        <div class="net-handle">@eduport_jee_keam</div>
+                    </div>
+                </a>
+
+                <a href="https://www.instagram.com/eduport_commerce_plusone" target="_blank" rel="noopener" class="net-card">
+                    <div class="net-avatar"><img src="assets/dp-ed-commerce-plusone.jpg" alt="@eduport_commerce_plusone profile picture" loading="lazy" width="100" height="100"></div>
+                    <div class="net-info">
+                        <div class="net-name">Commerce Plus One</div>
+                        <div class="net-followers">519 followers</div>
+                        <div class="net-handle">@eduport_commerce_plusone</div>
+                    </div>
+                </a>
             </div>
         </section>
 
