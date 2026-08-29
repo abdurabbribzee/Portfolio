@@ -3,464 +3,1002 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>C Abdurabb | Social Media Strategist &amp; Founder</title>
-    <meta name="description" content="C Abdurabb — Social Media Strategist and Founder of Case Planet. Organic growth, short-form video strategy, and conversion-focused e-commerce. Kerala, India.">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <title>C Abdurabb — Social Media Strategist &amp; Founder</title>
+    <meta name="description" content="C Abdurabb — Social Media Strategist and Founder of Case Planet. Organic growth, short-form video strategy and conversion-focused e-commerce. Kerala, India.">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
+        :root {
+            --bg-color: #f7f9f8;
+            --text-main: #0d131a;
+            --text-muted: #626a73;
+            --accent-green: #00e599;
+            --accent-green-dark: #00c684;
+            --badge-bg: #e6faf2;
+            --dark-banner: #091319;
+            --border-color: #e2e8e5;
+            --font-heading: 'Plus Jakarta Sans', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-body);
+            -webkit-font-smoothing: antialiased;
+        }
+
         body {
-            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            overflow-x: hidden;
+            line-height: 1.5;
             scroll-behavior: smooth;
         }
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+
+        /* --- CONTAINER & HEADER --- */
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2rem 0;
         }
-        .selection-black::selection {
-            background: black;
-            color: white;
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--text-main);
+            text-decoration: none;
         }
-        .hero-image-container {
-            transition: all 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+            background-color: var(--accent-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            color: var(--text-main);
         }
-        .hero-image-container:hover {
-            filter: grayscale(0%);
-            transform: scale(1.02) rotate(1deg);
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 2.2rem;
         }
-        .project-card {
-            transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
-        .project-card:hover {
-            transform: translateY(-6px);
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--text-main);
         }
-        .project-card:hover .project-stat {
-            transform: scale(1.04);
+
+        .nav-link.active::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background-color: var(--accent-green);
+            border-radius: 50%;
+            display: inline-block;
         }
-        .project-graphic {
-            transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+
+        /* --- HERO SECTION --- */
+        .hero {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            padding: 3rem 0 5rem 0;
+            position: relative;
+        }
+
+        .figma-badge {
+            display: inline-block;
+            position: relative;
+            background-color: var(--badge-bg);
+            border: 1px solid var(--accent-green);
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 1.8rem;
+        }
+
+        .figma-badge::before, .figma-badge::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: #ffffff;
+            border: 1.5px solid var(--accent-green);
+        }
+
+        .figma-badge::before { top: -4px; left: -4px; }
+        .figma-badge::after { top: -4px; right: -4px; }
+
+        .badge-corner-bl, .badge-corner-br {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: #ffffff;
+            border: 1.5px solid var(--accent-green);
+        }
+        .badge-corner-bl { bottom: -4px; left: -4px; }
+        .badge-corner-br { bottom: -4px; right: -4px; }
+
+        .hero-title {
+            font-family: var(--font-heading);
+            font-size: clamp(2.8rem, 5vw, 4.2rem);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -1px;
+            color: var(--text-main);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-description {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            max-width: 520px;
+            margin-bottom: 2.5rem;
+        }
+
+        .action-group {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            position: relative;
+            background-color: var(--text-main);
+            color: #ffffff;
+            padding: 14px 28px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 4px 4px 0px var(--accent-green);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0px var(--accent-green);
+        }
+
+        .btn-secondary {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 600;
+            font-size: 0.95rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: opacity 0.2s ease;
+        }
+
+        .btn-secondary:hover { opacity: 0.7; }
+
+        .social-links-row {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .social-label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-right: 0.5rem;
+        }
+
+        .social-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 0.95rem;
+            background: #ffffff;
+            transition: all 0.2s ease;
+        }
+
+        .social-icon.accent {
+            background-color: var(--accent-green);
+            border-color: var(--accent-green);
+        }
+
+        .social-icon:hover { transform: translateY(-2px); }
+
+        /* --- HERO PORTRAIT --- */
+        .hero-image-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .green-blob-shape {
+            position: absolute;
+            bottom: -30px;
+            right: -30px;
+            width: 380px;
+            height: 240px;
+            background: var(--accent-green);
+            border-radius: 90px 40px 100px 30px;
+            z-index: 1;
+        }
+
+        .zigzag-doodle {
+            position: absolute;
+            top: 20px;
+            left: -20px;
+            font-size: 2.5rem;
+            color: var(--text-main);
+            z-index: 3;
+        }
+
+        .portrait-card {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 380px;
+            aspect-ratio: 4/5;
+            background-color: #e5e5e5;
+            box-shadow: 12px 12px 0px var(--text-main);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .portrait-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .rotating-badge {
+            position: absolute;
+            left: -50px;
+            bottom: 80px;
+            width: 110px;
+            height: 110px;
+            z-index: 4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .rotating-text {
+            width: 100%;
+            height: 100%;
+            animation: rotateText 12s linear infinite;
+        }
+
+        .rotating-text text {
+            font-size: 9px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            fill: var(--text-main);
+        }
+
+        .badge-arrow {
+            position: absolute;
+            font-size: 1.2rem;
+            color: var(--text-main);
+        }
+
+        @keyframes rotateText {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* --- TICKER BANNER --- */
+        .ticker-section {
+            background-color: var(--dark-banner);
+            color: #ffffff;
+            padding: 1.8rem 0;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .ticker-track {
+            display: inline-flex;
+            align-items: center;
+            gap: 3rem;
+            animation: scrollTicker 20s linear infinite;
+        }
+
+        .ticker-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 2rem;
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        .ticker-star {
+            color: var(--accent-green);
+            font-size: 1rem;
+        }
+
+        @keyframes scrollTicker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* --- SECTIONS --- */
+        .section-padding { padding: 5rem 0; }
+
+        .section-title-wrapper { margin-bottom: 3rem; }
+
+        .sub-heading {
+            color: var(--accent-green-dark);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-heading {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            font-weight: 800;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            padding: 2.5rem 2rem;
+            border-radius: 8px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.05);
+        }
+
+        .card-number {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 0.5rem;
+        }
+
+        .card-title {
+            font-family: var(--font-heading);
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+        }
+
+        .card-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* --- PAGES I BUILT --- */
+        .pages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .page-card {
+            display: flex;
+            flex-direction: column;
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 2.2rem 2rem;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+
+        .page-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.06);
+            border-color: var(--accent-green);
+        }
+
+        .page-avatar {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--accent-green);
+            margin-bottom: 1.4rem;
+            flex-shrink: 0;
+        }
+
+        .page-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .page-handle {
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            margin-bottom: 0.6rem;
+        }
+
+        .page-hook {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            font-weight: 800;
+            line-height: 1.25;
+            letter-spacing: -0.4px;
+            margin-bottom: 1rem;
+        }
+
+        .page-note {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 1.8rem;
+        }
+
+        .page-foot {
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .page-stat {
+            background: var(--badge-bg);
+            color: var(--accent-green-dark);
+            border: 1px solid var(--accent-green);
+            border-radius: 50px;
+            padding: 5px 14px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .page-go {
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: gap 0.2s ease;
+        }
+
+        .page-card:hover .page-go { gap: 12px; }
+
+        /* --- EXPERIENCE --- */
+        .exp-list { border-top: 1px solid var(--border-color); }
+
+        .exp-row {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 2.5rem;
+            padding: 2.8rem 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .exp-date {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--accent-green-dark);
+            margin-bottom: 0.4rem;
+        }
+
+        .exp-company {
+            font-family: var(--font-heading);
+            font-size: 1.15rem;
+            font-weight: 800;
+        }
+
+        .exp-role {
+            font-family: var(--font-heading);
+            font-size: 1.45rem;
+            font-weight: 800;
+            letter-spacing: -0.4px;
+            margin-bottom: 0.7rem;
+        }
+
+        .exp-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.6rem;
+        }
+
+        .exp-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.4rem;
+        }
+
+        .exp-point-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent-green-dark);
+            margin-bottom: 0.35rem;
+        }
+
+        .exp-point p {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            line-height: 1.55;
+        }
+
+        /* --- EXPERTISE --- */
+        .skill-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .skill-col h4 {
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--accent-green-dark);
+            margin-bottom: 1.2rem;
+        }
+
+        .skill-list { list-style: none; }
+
+        .skill-list li {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            font-weight: 700;
+            padding: 0.75rem 0;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        /* --- EDUCATION & RECOGNITION --- */
+        .two-col {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3.5rem;
+        }
+
+        .edu-item {
+            border-left: 3px solid var(--accent-green);
+            padding-left: 1.3rem;
+            margin-bottom: 1.8rem;
+        }
+
+        .edu-title {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            font-weight: 800;
+            margin-bottom: 0.2rem;
+        }
+
+        .edu-sub {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+        }
+
+        .edu-date {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--accent-green-dark);
+            margin-top: 0.3rem;
+        }
+
+        /* --- CONTACT --- */
+        .contact-block {
+            background-color: var(--dark-banner);
+            color: #ffffff;
+            border-radius: 12px;
+            padding: 4rem 3rem;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .contact-title {
+            font-family: var(--font-heading);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -1px;
+        }
+
+        .contact-sub {
+            color: rgba(255,255,255,0.65);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-top: 1rem;
+            max-width: 420px;
+        }
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+            min-width: 240px;
+            padding: 14px 22px;
+            border: 1px solid rgba(255,255,255,0.18);
+            border-radius: 6px;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+        }
+
+        .contact-link:hover {
+            background: var(--accent-green);
+            border-color: var(--accent-green);
+            color: var(--text-main);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            border-top: 1px solid var(--border-color);
+            padding: 2.5rem 0;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 992px) {
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+                text-align: center;
+            }
+            .hero-description { margin-left: auto; margin-right: auto; }
+            .action-group, .social-links-row { justify-content: center; }
+            .rotating-badge { left: 10px; }
+            nav { display: none; }
+            .exp-row { grid-template-columns: 1fr; gap: 1.2rem; }
+            .contact-block { grid-template-columns: 1fr; padding: 3rem 2rem; }
         }
     </style>
 </head>
-<body class="bg-white text-black antialiased selection-black">
+<body>
 
-    <!-- Header / Navigation -->
-    <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-zinc-50">
-        <div class="max-w-4xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="transition-transform duration-300 cursor-pointer hover:-translate-y-0.5" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-                <svg viewBox="0 0 100 100" class="w-10 h-10" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="50" cy="50" r="46" fill="none" stroke="#111111" stroke-width="5" />
-                    <path d="M28 68 L44 30 L56 30 L72 68" fill="none" stroke="#111111" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
-                    <line x1="37" y1="55" x2="63" y2="55" stroke="#2563eb" stroke-width="7" stroke-linecap="round" />
-                </svg>
-            </div>
+    <div class="container">
+        <header>
+            <a href="#home" class="brand-logo">
+                <div class="logo-icon"><i class="fa-solid fa-bolt"></i></div>
+                <span>Abdurabb</span>
+            </a>
+            <nav>
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#pages" class="nav-link">Work</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#education" class="nav-link">Education</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+        </header>
 
-            <div class="flex items-center gap-4 md:gap-8">
-                <a
-                    href="mailto:workwithcabdurabb@gmail.com?subject=CV%20Request%20%E2%80%94%20C%20Abdurabb&amp;body=Hi%20Abdurabb%2C%0A%0AI%27d%20like%20a%20copy%20of%20your%20CV.%0A%0AThanks%2C"
-                    class="hidden sm:flex items-center gap-2 text-[10px] font-bold tracking-[0.15em] uppercase border border-black/20 text-black px-5 py-2 rounded-full hover:bg-black hover:text-white hover:border-black transition-all duration-300 whitespace-nowrap"
-                >
-                    <i data-lucide="file-text" class="w-3.5 h-3.5"></i> Request CV
-                </a>
-                <a
-                    href="mailto:workwithcabdurabb@gmail.com"
-                    class="flex items-center gap-2 text-[10px] font-bold tracking-[0.15em] uppercase border-b border-black pb-0.5 hover:opacity-50 transition-opacity whitespace-nowrap"
-                >
-                    CONNECT ME <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-                </a>
-            </div>
-        </div>
-    </nav>
+        <!-- Hero -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <div class="figma-badge">
+                    Hi everyone 👋, I'm C Abdurabb
+                    <div class="badge-corner-bl"></div>
+                    <div class="badge-corner-br"></div>
+                </div>
 
-    <main class="max-w-4xl mx-auto px-6 pt-36 md:pt-48 pb-32">
+                <h1 class="hero-title">Social Media Strategist Based in India</h1>
 
-        <!-- Hero Section & Bio -->
-        <section class="fade-in mb-20 md:mb-28">
-            <div class="mb-14">
-                <h1 class="text-4xl md:text-7xl font-bold tracking-tighter leading-tight">
-                    C Abdurabb
-                </h1>
-                <p class="text-[11px] font-bold tracking-[0.25em] uppercase text-zinc-400 opacity-80 mt-4">
-                    Social Media Strategist &amp; Founder
+                <p class="hero-description">
+                    5+ years building organic growth engines, short-form video systems and conversion-focused e-commerce funnels. Founder of <strong>Case Planet</strong>, scaled to 101K followers and 10,000+ customers from a standing start. Currently driving platform strategy at <strong>Eduport</strong>, where I grew total reach from 12M to 45M across 30+ channels.
                 </p>
+
+                <div class="action-group">
+                    <a href="mailto:workwithcabdurabb@gmail.com" class="btn-primary">
+                        Get In Touch <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+                    <a href="mailto:workwithcabdurabb@gmail.com?subject=CV%20Request%20%E2%80%94%20C%20Abdurabb" class="btn-secondary">
+                        Request CV <i class="fa-solid fa-file-lines"></i>
+                    </a>
+                </div>
+
+                <div class="social-links-row">
+                    <span class="social-label">Find me on:</span>
+                    <a href="https://www.instagram.com/rib_zee" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/c-abdurabb-52840b2b6" target="_blank" rel="noopener" class="social-icon accent" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="mailto:workwithcabdurabb@gmail.com" class="social-icon" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                </div>
             </div>
 
-            <div class="flex flex-col md:flex-row gap-12 items-start">
-                <div class="flex-1">
-                    <p class="text-zinc-500 leading-relaxed text-lg md:text-xl">
-                        Social Media Strategist with 5+ years of experience building organic growth engines, short-form video systems, and conversion-focused e-commerce funnels. Founder of <strong class="text-black">Case Planet</strong>, scaled to 101K followers and 10,000+ customers from a standing start. Currently driving platform strategy at <strong class="text-black">Eduport</strong>, where I grew total reach from 12M to 45M across 30+ channels.
-                    </p>
+            <div class="hero-image-wrapper">
+                <div class="zigzag-doodle"><i class="fa-solid fa-wave-square"></i></div>
+                <div class="green-blob-shape"></div>
 
-                    <div class="mt-8 flex flex-wrap items-center gap-4">
-                        <a
-                            href="mailto:workwithcabdurabb@gmail.com?subject=CV%20Request%20%E2%80%94%20C%20Abdurabb"
-                            class="inline-flex sm:hidden items-center gap-2 text-[10px] font-bold tracking-[0.15em] uppercase border border-black/20 text-black px-8 py-3.5 rounded-full hover:bg-black hover:text-white hover:border-black transition-all duration-300 whitespace-nowrap"
-                        >
-                            <i data-lucide="file-text" class="w-4 h-4"></i> Request CV
-                        </a>
-                    </div>
+                <div class="rotating-badge">
+                    <svg class="rotating-text" viewBox="0 0 100 100">
+                        <path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none"/>
+                        <text><textPath href="#circlePath">explore more • see the work • </textPath></text>
+                    </svg>
+                    <div class="badge-arrow"><i class="fa-solid fa-arrow-down"></i></div>
                 </div>
-                <div class="w-full md:w-64 shrink-0">
-                    <div class="hero-image-container aspect-[4/5] bg-zinc-100 overflow-hidden grayscale rounded-sm border border-zinc-100 cursor-crosshair shadow-sm hover:shadow-2xl">
-                        <img
-                            src="WhatsApp%20Image%202026-08-15%20at%2001.52.07.jpeg"
-                            alt="C Abdurabb"
-                            class="w-full h-full object-cover"
-                        />
-                    </div>
+
+                <div class="portrait-card">
+                    <img src="WhatsApp%20Image%202026-08-15%20at%2001.52.07.jpeg" alt="C Abdurabb">
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Ticker -->
+    <section class="ticker-section">
+        <div class="ticker-track">
+            <div class="ticker-item"><span>Social Media Strategy</span> <i class="fa-solid fa-sparkles ticker-star"></i></div>
+            <div class="ticker-item"><span>Organic Growth Funnels</span> <i class="fa-solid fa-sparkles ticker-star"></i></div>
+            <div class="ticker-item"><span>E-Commerce Scaling</span> <i class="fa-solid fa-sparkles ticker-star"></i></div>
+            <div class="ticker-item"><span>Brand Identity</span> <i class="fa-solid fa-sparkles ticker-star"></i></div>
+            <div class="ticker-item"><span>Data Analytics</span> <i class="fa-solid fa-sparkles ticker-star"></i></div>
+            <div class="ticker-item"><span>Social Media Strategy</span> <i class="fa-solid fa-sparkles ticker-star"></i></div>
+            <div class="ticker-item"><span>Organic Growth Funnels</span> <i class="fa-solid fa-sparkles ticker-star"></i></div>
+            <div class="ticker-item"><span>E-Commerce Scaling</span> <i class="fa-solid fa-sparkles ticker-star"></i></div>
+            <div class="ticker-item"><span>Brand Identity</span> <i class="fa-solid fa-sparkles ticker-star"></i></div>
+            <div class="ticker-item"><span>Data Analytics</span> <i class="fa-solid fa-sparkles ticker-star"></i></div>
+        </div>
+    </section>
+
+    <div class="container">
+
+        <!-- Track Record -->
+        <section class="section-padding" id="track-record">
+            <div class="section-title-wrapper">
+                <div class="sub-heading">Track Record</div>
+                <h2 class="section-heading">Delivering Impact &amp; Reach</h2>
+            </div>
+
+            <div class="grid-3">
+                <div class="card">
+                    <div class="card-number">200M+</div>
+                    <h3 class="card-title">Dashboard Views</h3>
+                    <p class="card-desc">Cumulative views generated across every page managed &mdash; brand, campus, regional and event accounts combined.</p>
+                </div>
+                <div class="card">
+                    <div class="card-number">265K+</div>
+                    <h3 class="card-title">Followers Built</h3>
+                    <p class="card-desc">Audience grown across owned and managed Instagram pages, entirely through organic content architecture.</p>
+                </div>
+                <div class="card">
+                    <div class="card-number">10K+</div>
+                    <h3 class="card-title">Customers Generated</h3>
+                    <p class="card-desc">Converted content views directly into orders for Case Planet, the direct-to-consumer brand I founded.</p>
+                </div>
+                <div class="card">
+                    <div class="card-number">30+</div>
+                    <h3 class="card-title">Channels Managed</h3>
+                    <p class="card-desc">Instagram, YouTube, WhatsApp and Facebook accounts run in parallel with platform-specific strategies.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Metrics Bar -->
-        <section class="fade-in mb-28 md:mb-40">
-            <div class="grid grid-cols-2 md:grid-cols-4 border-t border-zinc-200 divide-zinc-100 md:divide-x">
-                <div class="py-8 md:pr-6">
-                    <div class="text-4xl md:text-5xl font-bold tracking-tighter">200M+</div>
-                    <div class="text-[10px] font-bold tracking-[0.15em] uppercase text-zinc-400 mt-2 leading-relaxed">Dashboard views across pages</div>
-                </div>
-                <div class="py-8 md:px-6">
-                    <div class="text-4xl md:text-5xl font-bold tracking-tighter">10K+</div>
-                    <div class="text-[10px] font-bold tracking-[0.15em] uppercase text-zinc-400 mt-2 leading-relaxed">Customers generated</div>
-                </div>
-                <div class="py-8 md:px-6">
-                    <div class="text-4xl md:text-5xl font-bold tracking-tighter">30+</div>
-                    <div class="text-[10px] font-bold tracking-[0.15em] uppercase text-zinc-400 mt-2 leading-relaxed">Channels managed</div>
-                </div>
-                <div class="py-8 md:pl-6">
-                    <div class="text-4xl md:text-5xl font-bold tracking-tighter">20+</div>
-                    <div class="text-[10px] font-bold tracking-[0.15em] uppercase text-zinc-400 mt-2 leading-relaxed">Tech influencer collabs</div>
-                </div>
+        <!-- Pages I Built -->
+        <section class="section-padding" id="pages">
+            <div class="section-title-wrapper">
+                <div class="sub-heading">Pages I Built</div>
+                <h2 class="section-heading">Grown From Zero, Organically</h2>
+            </div>
+
+            <div class="pages-grid">
+
+                <a href="https://www.instagram.com/caseplanet.india_" target="_blank" rel="noopener" class="page-card">
+                    <div class="page-avatar"><img src="assets/dp-caseplanet.jpg" alt="@caseplanet.india_ profile picture" loading="lazy" width="100" height="100"></div>
+                    <div class="page-handle">@caseplanet.india_</div>
+                    <h3 class="page-hook">Kerala&rsquo;s biggest phone case brand. Built from nothing in 2023.</h3>
+                    <p class="page-note">10,000+ customers, 3M+ engagements in three months, 300+ pieces of content and 20+ tech influencer collaborations.</p>
+                    <div class="page-foot"><span class="page-stat">101K followers</span><span class="page-go">View page <i class="fa-solid fa-arrow-right"></i></span></div>
+                </a>
+
+                <a href="https://www.instagram.com/trollpattambi" target="_blank" rel="noopener" class="page-card">
+                    <div class="page-avatar"><img src="assets/dp-trollpattambi.jpg" alt="@trollpattambi profile picture" loading="lazy" width="100" height="100"></div>
+                    <div class="page-handle">@trollpattambi</div>
+                    <h3 class="page-hook">Kerala&rsquo;s most followed troll page. Admin since post one.</h3>
+                    <p class="page-note">Grew a regional humour page into a cultural fixture for Pattambi &mdash; and kept the voice consistent the entire way up.</p>
+                    <div class="page-foot"><span class="page-stat">88.5K followers</span><span class="page-go">View page <i class="fa-solid fa-arrow-right"></i></span></div>
+                </a>
+
+                <a href="https://www.instagram.com/foodstories_byribzee" target="_blank" rel="noopener" class="page-card">
+                    <div class="page-avatar"><img src="assets/dp-foodstories.jpg" alt="@foodstories_byribzee profile picture" loading="lazy" width="100" height="100"></div>
+                    <div class="page-handle">@foodstories_byribzee</div>
+                    <h3 class="page-hook">48,000 people in Calicut decide dinner here.</h3>
+                    <p class="page-note">A food discovery page built on taste, shoot, share. Restaurants now come to the DMs instead of the other way round.</p>
+                    <div class="page-foot"><span class="page-stat">48K followers</span><span class="page-go">View page <i class="fa-solid fa-arrow-right"></i></span></div>
+                </a>
+
+                <a href="https://www.instagram.com/rib_zee" target="_blank" rel="noopener" class="page-card">
+                    <div class="page-avatar"><img src="assets/dp-ribzee.jpg" alt="@rib_zee profile picture" loading="lazy" width="100" height="100"></div>
+                    <div class="page-handle">@rib_zee</div>
+                    <h3 class="page-hook">Three posts past a million views. Nothing spent on ads.</h3>
+                    <p class="page-note">The personal page where every format gets tested first. If a hook lands here, it ships to the brand accounts.</p>
+                    <div class="page-foot"><span class="page-stat">5M+ engagements</span><span class="page-go">View page <i class="fa-solid fa-arrow-right"></i></span></div>
+                </a>
+
+                <a href="https://www.instagram.com/momentz_of_sngs" target="_blank" rel="noopener" class="page-card">
+                    <div class="page-avatar"><img src="assets/dp-momentz.jpg" alt="@momentz_of_sngs profile picture" loading="lazy" width="100" height="100"></div>
+                    <div class="page-handle">@momentz_of_sngs</div>
+                    <h3 class="page-hook">Six thousand posts later, the whole campus follows.</h3>
+                    <p class="page-note">A students page started from zero at SNGS Pattambi, now the default feed for campus life and student storytelling.</p>
+                    <div class="page-foot"><span class="page-stat">2.5M organic reach</span><span class="page-go">View page <i class="fa-solid fa-arrow-right"></i></span></div>
+                </a>
+
+                <a href="https://www.instagram.com/gadpro.in" target="_blank" rel="noopener" class="page-card">
+                    <div class="page-avatar"><img src="assets/dp-gadpro.jpg" alt="@gadpro.in profile picture" loading="lazy" width="100" height="100"></div>
+                    <div class="page-handle">@gadpro.in</div>
+                    <h3 class="page-hook">Two months in. Fifty qualified leads out.</h3>
+                    <p class="page-note">Meta Ads, Instagram promotions and the supporting creative for this gadget retailer, lifting engagement 25% alongside the reach.</p>
+                    <div class="page-foot"><span class="page-stat">+30% brand reach</span><span class="page-go">View page <i class="fa-solid fa-arrow-right"></i></span></div>
+                </a>
+
+                <a href="https://www.instagram.com/ascend__25" target="_blank" rel="noopener" class="page-card">
+                    <div class="page-avatar"><img src="assets/dp-ascend.jpg" alt="@ascend__25 profile picture" loading="lazy" width="100" height="100"></div>
+                    <div class="page-handle">@ascend__25</div>
+                    <h3 class="page-hook">Same fest, ten times the sponsorship money.</h3>
+                    <p class="page-note">National-level management fest at the University of Calicut. Led sponsorship and promotion, driving 600K+ dashboard views.</p>
+                    <div class="page-foot"><span class="page-stat">10&times; revenue</span><span class="page-go">View page <i class="fa-solid fa-arrow-right"></i></span></div>
+                </a>
+
+                <a href="https://www.instagram.com/maghribmunch" target="_blank" rel="noopener" class="page-card">
+                    <div class="page-avatar"><img src="assets/dp-maghribmunch.jpg" alt="@maghribmunch profile picture" loading="lazy" width="100" height="100"></div>
+                    <div class="page-handle">@maghribmunch</div>
+                    <h3 class="page-hook">No ads. No listings. Just a full booking sheet.</h3>
+                    <p class="page-note">Iftar dining venture at Calicut University and NIT Kalanthode, launched 2026 and booked out on organic social alone.</p>
+                    <div class="page-foot"><span class="page-stat">Fully organic</span><span class="page-go">View page <i class="fa-solid fa-arrow-right"></i></span></div>
+                </a>
+
             </div>
         </section>
 
-        <!-- Works Section -->
-        <section id="works-gallery" class="fade-in mb-28 md:mb-40">
-            <div class="flex items-baseline justify-between mb-12 border-b border-zinc-100 pb-4">
-                <h2 class="text-[10px] font-bold tracking-[0.3em] uppercase text-zinc-400">Pages Built &amp; Scaled</h2>
-                <a
-                    href="https://www.instagram.com/rib_zee"
-                    target="_blank" rel="noopener"
-                    class="text-[10px] font-bold tracking-[0.15em] uppercase text-blue-600 hover:text-blue-800 transition-colors flex items-center gap-1"
-                >
-                    Instagram <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
-                </a>
+        <!-- Experience -->
+        <section class="section-padding" id="experience">
+            <div class="section-title-wrapper">
+                <div class="sub-heading">Experience</div>
+                <h2 class="section-heading">Where I&rsquo;ve Done The Work</h2>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="exp-list">
 
-                <!-- Case Planet -->
-                <a href="https://www.instagram.com/caseplanet.india_" target="_blank" rel="noopener" class="project-card group block border border-zinc-100 rounded-2xl overflow-hidden bg-zinc-50/50 hover:bg-white hover:shadow-xl hover:border-transparent transition-all duration-300">
-                    <div class="project-stat aspect-[16/10] overflow-hidden relative bg-gradient-to-br from-zinc-900 to-zinc-700 flex flex-col items-center justify-center transition-transform duration-700 ease-out">
-                        <div class="w-14 h-14 rounded-full overflow-hidden ring-2 ring-white/40 shadow-lg mb-3 bg-white/10 shrink-0">
-                            <img src="assets/dp-caseplanet.jpg" alt="@caseplanet.india_ profile picture" class="w-full h-full object-cover" loading="lazy" width="100" height="100" />
-                        </div>
-                        <div class="text-white text-4xl md:text-5xl font-bold tracking-tighter text-center px-6 leading-tight">101K</div>
-                        <div class="text-white/60 text-[9px] font-bold tracking-[0.25em] uppercase mt-1.5 text-center px-6">Followers</div>
-                        <div class="absolute top-4 right-4 bg-white/10 backdrop-blur-md text-white text-[9px] font-bold tracking-[0.15em] uppercase px-3 py-1 rounded-full border border-white/20">
-                            Founder
-                        </div>
+                <div class="exp-row">
+                    <div class="exp-meta">
+                        <div class="exp-date">2025 &mdash; Present</div>
+                        <div class="exp-company">Eduport Pvt Ltd</div>
                     </div>
-                    <div class="p-6">
-                        <span class="text-[9px] font-mono tracking-widest text-zinc-400 uppercase">@caseplanet.india_</span>
-                        <h3 class="font-bold text-lg mt-1 text-zinc-900 flex items-center justify-between">
-                            Case Planet
-                            <i data-lucide="arrow-right" class="w-4 h-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all"></i>
-                        </h3>
-                        <p class="text-zinc-500 text-xs mt-2 leading-relaxed">
-                            D2C phone case brand founded in 2023, now the leading phone case seller in Kerala. 10,000+ customers, 3M+ engagements in three months, 300+ pieces of content and 20+ tech influencer collaborations.
-                        </p>
-                    </div>
-                </a>
-
-                <!-- Troll Pattambi -->
-                <a href="https://www.instagram.com/trollpattambi" target="_blank" rel="noopener" class="project-card group block border border-zinc-100 rounded-2xl overflow-hidden bg-zinc-50/50 hover:bg-white hover:shadow-xl hover:border-transparent transition-all duration-300">
-                    <div class="project-stat aspect-[16/10] overflow-hidden relative bg-gradient-to-br from-blue-600 to-blue-800 flex flex-col items-center justify-center transition-transform duration-700 ease-out">
-                        <div class="w-14 h-14 rounded-full overflow-hidden ring-2 ring-white/40 shadow-lg mb-3 bg-white/10 shrink-0">
-                            <img src="assets/dp-trollpattambi.jpg" alt="@trollpattambi profile picture" class="w-full h-full object-cover" loading="lazy" width="100" height="100" />
-                        </div>
-                        <div class="text-white text-4xl md:text-5xl font-bold tracking-tighter text-center px-6 leading-tight">88.5K</div>
-                        <div class="text-white/60 text-[9px] font-bold tracking-[0.25em] uppercase mt-1.5 text-center px-6">Followers</div>
-                        <div class="absolute top-4 right-4 bg-white/10 backdrop-blur-md text-white text-[9px] font-bold tracking-[0.15em] uppercase px-3 py-1 rounded-full border border-white/20">
-                            Page Admin
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <span class="text-[9px] font-mono tracking-widest text-zinc-400 uppercase">@trollpattambi</span>
-                        <h3 class="font-bold text-lg mt-1 text-zinc-900 flex items-center justify-between">
-                            Troll Pattambi
-                            <i data-lucide="arrow-right" class="w-4 h-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all"></i>
-                        </h3>
-                        <p class="text-zinc-500 text-xs mt-2 leading-relaxed">
-                            The most followed regional troll page in Kerala. Worked as page admin from the very beginning, shaping content voice, posting cadence and community tone.
-                        </p>
-                    </div>
-                </a>
-
-                <!-- Food Stories -->
-                <a href="https://www.instagram.com/foodstories_byribzee" target="_blank" rel="noopener" class="project-card group block border border-zinc-100 rounded-2xl overflow-hidden bg-zinc-50/50 hover:bg-white hover:shadow-xl hover:border-transparent transition-all duration-300">
-                    <div class="project-stat aspect-[16/10] overflow-hidden relative bg-gradient-to-br from-teal-600 to-cyan-800 flex flex-col items-center justify-center transition-transform duration-700 ease-out">
-                        <div class="w-14 h-14 rounded-full overflow-hidden ring-2 ring-white/40 shadow-lg mb-3 bg-white/10 shrink-0">
-                            <img src="assets/dp-foodstories.jpg" alt="@foodstories_byribzee profile picture" class="w-full h-full object-cover" loading="lazy" width="100" height="100" />
-                        </div>
-                        <div class="text-white text-4xl md:text-5xl font-bold tracking-tighter text-center px-6 leading-tight">48K</div>
-                        <div class="text-white/60 text-[9px] font-bold tracking-[0.25em] uppercase mt-1.5 text-center px-6">Followers</div>
-                        <div class="absolute top-4 right-4 bg-white/10 backdrop-blur-md text-white text-[9px] font-bold tracking-[0.15em] uppercase px-3 py-1 rounded-full border border-white/20">
-                            Founder
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <span class="text-[9px] font-mono tracking-widest text-zinc-400 uppercase">@foodstories_byribzee</span>
-                        <h3 class="font-bold text-lg mt-1 text-zinc-900 flex items-center justify-between">
-                            Food Stories
-                            <i data-lucide="arrow-right" class="w-4 h-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all"></i>
-                        </h3>
-                        <p class="text-zinc-500 text-xs mt-2 leading-relaxed">
-                            Calicut food discovery page built on the taste-shoot-share format. Scaled to 48K followers and now fields inbound collaboration requests from restaurants across Kerala.
-                        </p>
-                    </div>
-                </a>
-
-                <!-- Personal Creator Page -->
-                <a href="https://www.instagram.com/rib_zee" target="_blank" rel="noopener" class="project-card group block border border-zinc-100 rounded-2xl overflow-hidden bg-zinc-50/50 hover:bg-white hover:shadow-xl hover:border-transparent transition-all duration-300">
-                    <div class="project-stat aspect-[16/10] overflow-hidden relative bg-gradient-to-br from-violet-600 to-violet-900 flex flex-col items-center justify-center transition-transform duration-700 ease-out">
-                        <div class="w-14 h-14 rounded-full overflow-hidden ring-2 ring-white/40 shadow-lg mb-3 bg-white/10 shrink-0">
-                            <img src="assets/dp-ribzee.jpg" alt="@rib_zee profile picture" class="w-full h-full object-cover" loading="lazy" width="100" height="100" />
-                        </div>
-                        <div class="text-white text-4xl md:text-5xl font-bold tracking-tighter text-center px-6 leading-tight">5M+</div>
-                        <div class="text-white/60 text-[9px] font-bold tracking-[0.25em] uppercase mt-1.5 text-center px-6">Total engagements</div>
-                        <div class="absolute top-4 right-4 bg-white/10 backdrop-blur-md text-white text-[9px] font-bold tracking-[0.15em] uppercase px-3 py-1 rounded-full border border-white/20">
-                            Personal Brand
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <span class="text-[9px] font-mono tracking-widest text-zinc-400 uppercase">@rib_zee</span>
-                        <h3 class="font-bold text-lg mt-1 text-zinc-900 flex items-center justify-between">
-                            Personal Creator Page
-                            <i data-lucide="arrow-right" class="w-4 h-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all"></i>
-                        </h3>
-                        <p class="text-zinc-500 text-xs mt-2 leading-relaxed">
-                            Personal brand at 11K followers, with 3 posts crossing 1M+ views and 10+ videos over 100K organic reach, built on trend-driven storytelling.
-                        </p>
-                    </div>
-                </a>
-
-                <!-- Momentz of SNGS -->
-                <a href="https://www.instagram.com/momentz_of_sngs" target="_blank" rel="noopener" class="project-card group block border border-zinc-100 rounded-2xl overflow-hidden bg-zinc-50/50 hover:bg-white hover:shadow-xl hover:border-transparent transition-all duration-300">
-                    <div class="project-stat aspect-[16/10] overflow-hidden relative bg-gradient-to-br from-emerald-600 to-emerald-800 flex flex-col items-center justify-center transition-transform duration-700 ease-out">
-                        <div class="w-14 h-14 rounded-full overflow-hidden ring-2 ring-white/40 shadow-lg mb-3 bg-white/10 shrink-0">
-                            <img src="assets/dp-momentz.jpg" alt="@momentz_of_sngs profile picture" class="w-full h-full object-cover" loading="lazy" width="100" height="100" />
-                        </div>
-                        <div class="text-white text-4xl md:text-5xl font-bold tracking-tighter text-center px-6 leading-tight">2.5M</div>
-                        <div class="text-white/60 text-[9px] font-bold tracking-[0.25em] uppercase mt-1.5 text-center px-6">Organic reach</div>
-                        <div class="absolute top-4 right-4 bg-white/10 backdrop-blur-md text-white text-[9px] font-bold tracking-[0.15em] uppercase px-3 py-1 rounded-full border border-white/20">
-                            Founder
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <span class="text-[9px] font-mono tracking-widest text-zinc-400 uppercase">@momentz_of_sngs</span>
-                        <h3 class="font-bold text-lg mt-1 text-zinc-900 flex items-center justify-between">
-                            Momentz of SNGS
-                            <i data-lucide="arrow-right" class="w-4 h-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all"></i>
-                        </h3>
-                        <p class="text-zinc-500 text-xs mt-2 leading-relaxed">
-                            Campus students page started from zero, now at 2.5M organic reach across 6,000+ posts through community-first content and student storytelling.
-                        </p>
-                    </div>
-                </a>
-
-                <!-- GADPRO -->
-                <a href="https://www.instagram.com/gadpro.in" target="_blank" rel="noopener" class="project-card group block border border-zinc-100 rounded-2xl overflow-hidden bg-zinc-50/50 hover:bg-white hover:shadow-xl hover:border-transparent transition-all duration-300">
-                    <div class="project-stat aspect-[16/10] overflow-hidden relative bg-gradient-to-br from-slate-700 to-slate-900 flex flex-col items-center justify-center transition-transform duration-700 ease-out">
-                        <div class="w-14 h-14 rounded-full overflow-hidden ring-2 ring-white/40 shadow-lg mb-3 bg-white/10 shrink-0">
-                            <img src="assets/dp-gadpro.jpg" alt="@gadpro.in profile picture" class="w-full h-full object-cover" loading="lazy" width="100" height="100" />
-                        </div>
-                        <div class="text-white text-4xl md:text-5xl font-bold tracking-tighter text-center px-6 leading-tight">+30%</div>
-                        <div class="text-white/60 text-[9px] font-bold tracking-[0.25em] uppercase mt-1.5 text-center px-6">Brand reach lift</div>
-                        <div class="absolute top-4 right-4 bg-white/10 backdrop-blur-md text-white text-[9px] font-bold tracking-[0.15em] uppercase px-3 py-1 rounded-full border border-white/20">
-                            Client Work
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <span class="text-[9px] font-mono tracking-widest text-zinc-400 uppercase">@gadpro.in</span>
-                        <h3 class="font-bold text-lg mt-1 text-zinc-900 flex items-center justify-between">
-                            GADPRO
-                            <i data-lucide="arrow-right" class="w-4 h-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all"></i>
-                        </h3>
-                        <p class="text-zinc-500 text-xs mt-2 leading-relaxed">
-                            Ran Meta Ads and Instagram promotion campaigns plus the supporting creative for this gadget retailer, lifting brand reach 30% and engagement 25% while generating 50+ qualified leads.
-                        </p>
-                    </div>
-                </a>
-
-                <!-- Ascend &rsquo;25 -->
-                <a href="https://www.instagram.com/ascend__25" target="_blank" rel="noopener" class="project-card group block border border-zinc-100 rounded-2xl overflow-hidden bg-zinc-50/50 hover:bg-white hover:shadow-xl hover:border-transparent transition-all duration-300">
-                    <div class="project-stat aspect-[16/10] overflow-hidden relative bg-gradient-to-br from-amber-500 to-orange-700 flex flex-col items-center justify-center transition-transform duration-700 ease-out">
-                        <div class="w-14 h-14 rounded-full overflow-hidden ring-2 ring-white/40 shadow-lg mb-3 bg-white/10 shrink-0">
-                            <img src="assets/dp-ascend.jpg" alt="@ascend__25 profile picture" class="w-full h-full object-cover" loading="lazy" width="100" height="100" />
-                        </div>
-                        <div class="text-white text-3xl md:text-4xl font-bold tracking-tighter text-center px-6 leading-tight">10&times;</div>
-                        <div class="text-white/60 text-[9px] font-bold tracking-[0.25em] uppercase mt-1.5 text-center px-6">Sponsorship revenue</div>
-                        <div class="absolute top-4 right-4 bg-white/10 backdrop-blur-md text-white text-[9px] font-bold tracking-[0.15em] uppercase px-3 py-1 rounded-full border border-white/20">
-                            Marketing Lead
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <span class="text-[9px] font-mono tracking-widest text-zinc-400 uppercase">@ascend__25</span>
-                        <h3 class="font-bold text-lg mt-1 text-zinc-900 flex items-center justify-between">
-                            Ascend &rsquo;25
-                            <i data-lucide="arrow-right" class="w-4 h-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all"></i>
-                        </h3>
-                        <p class="text-zinc-500 text-xs mt-2 leading-relaxed">
-                            National-level management fest at the University of Calicut. Led sponsorship and promotion as Marketing &amp; Sponsorship Coordinator, driving 600K+ dashboard views.
-                        </p>
-                    </div>
-                </a>
-
-                <!-- Maghrib Munch -->
-                <a href="https://www.instagram.com/maghribmunch" target="_blank" rel="noopener" class="project-card group block border border-zinc-100 rounded-2xl overflow-hidden bg-zinc-50/50 hover:bg-white hover:shadow-xl hover:border-transparent transition-all duration-300">
-                    <div class="project-stat aspect-[16/10] overflow-hidden relative bg-gradient-to-br from-rose-600 to-rose-900 flex flex-col items-center justify-center transition-transform duration-700 ease-out">
-                        <div class="w-14 h-14 rounded-full overflow-hidden ring-2 ring-white/40 shadow-lg mb-3 bg-white/10 shrink-0">
-                            <img src="assets/dp-maghribmunch.jpg" alt="@maghribmunch profile picture" class="w-full h-full object-cover" loading="lazy" width="100" height="100" />
-                        </div>
-                        <div class="text-white text-3xl md:text-4xl font-bold tracking-tighter text-center px-6 leading-tight">Fully Organic</div>
-                        <div class="text-white/60 text-[9px] font-bold tracking-[0.25em] uppercase mt-1.5 text-center px-6">Bookings channel</div>
-                        <div class="absolute top-4 right-4 bg-white/10 backdrop-blur-md text-white text-[9px] font-bold tracking-[0.15em] uppercase px-3 py-1 rounded-full border border-white/20">
-                            Founder
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <span class="text-[9px] font-mono tracking-widest text-zinc-400 uppercase">@maghribmunch</span>
-                        <h3 class="font-bold text-lg mt-1 text-zinc-900 flex items-center justify-between">
-                            Maghrib Munch
-                            <i data-lucide="arrow-right" class="w-4 h-4 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all"></i>
-                        </h3>
-                        <p class="text-zinc-500 text-xs mt-2 leading-relaxed">
-                            Iftar dining venture at Calicut University and NIT Kalanthode, launched 2026. Reached continuous bookings in a short window, driven purely by organic social marketing.
-                        </p>
-                    </div>
-                </a>
-
-            </div>
-
-            <div class="mt-16 flex justify-center">
-                <a
-                    href="https://www.instagram.com/rib_zee"
-                    target="_blank" rel="noopener"
-                    class="inline-flex items-center justify-center gap-3 text-xs font-bold tracking-[0.2em] uppercase bg-blue-600 text-white px-16 py-5 rounded-full hover:bg-blue-700 hover:-translate-y-1 transition-all duration-300 shadow-lg shadow-blue-600/15 hover:shadow-xl hover:shadow-blue-600/30 whitespace-nowrap group w-full sm:w-auto text-center"
-                >
-                    Follow My Work <i data-lucide="arrow-up-right" class="w-4 h-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"></i>
-                </a>
-            </div>
-        </section>
-
-        <!-- Experience Section -->
-        <section class="fade-in mb-28 md:mb-40">
-            <h2 class="text-[10px] font-bold tracking-[0.3em] uppercase text-zinc-400 mb-12">Experience</h2>
-            <div class="divide-y divide-zinc-100 border-t border-zinc-100">
-
-                <!-- Eduport -->
-                <div class="py-12 grid md:grid-cols-12 gap-6 md:gap-8 items-start group">
-                    <div class="md:col-span-4 flex flex-col gap-1.5">
-                        <span class="text-xs font-mono text-zinc-400">2025 &mdash; Present</span>
-                        <span class="font-bold text-sm tracking-wide text-zinc-900 group-hover:text-blue-600 transition-colors duration-300">
-                            Eduport Pvt Ltd
-                        </span>
-                    </div>
-                    <div class="md:col-span-8">
-                        <h3 class="font-bold text-xl text-zinc-900 mb-3">Social Media Strategist</h3>
-                        <p class="text-zinc-500 text-sm leading-relaxed mb-6">
-                            Running platform-specific strategy across 30+ channels &mdash; 10 Instagram, 10 YouTube, 5 WhatsApp and 5 Facebook &mdash; using Interakt, Meta Ads, Super Profile and Captions AI.
-                        </p>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 border-l border-zinc-100 pl-4">
-                            <div>
-                                <span class="block text-[9px] font-bold uppercase tracking-widest text-zinc-400">Reach</span>
-                                <p class="text-xs text-zinc-600 mt-1">Grew total reach from 12M to 45M (+200%) and added 20K+ followers.</p>
+                    <div>
+                        <h3 class="exp-role">Social Media Strategist</h3>
+                        <p class="exp-desc">Running platform-specific strategy across 30+ channels &mdash; 10 Instagram, 10 YouTube, 5 WhatsApp and 5 Facebook &mdash; using Interakt, Meta Ads, Super Profile and Captions AI.</p>
+                        <div class="exp-points">
+                            <div class="exp-point">
+                                <div class="exp-point-label">Reach</div>
+                                <p>Grew total reach from 12M to 45M (+200%) and added 20K+ followers.</p>
                             </div>
-                            <div>
-                                <span class="block text-[9px] font-bold uppercase tracking-widest text-zinc-400">Content</span>
-                                <p class="text-xs text-zinc-600 mt-1">Produced assets hitting 3M+ views in 10 days, several others past 500K.</p>
+                            <div class="exp-point">
+                                <div class="exp-point-label">Content</div>
+                                <p>Produced assets hitting 3M+ views in 10 days, several others past 500K.</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Case Planet -->
-                <div class="py-12 grid md:grid-cols-12 gap-6 md:gap-8 items-start group">
-                    <div class="md:col-span-4 flex flex-col gap-1.5">
-                        <span class="text-xs font-mono text-zinc-400">2023 &mdash; Present</span>
-                        <span class="font-bold text-sm tracking-wide text-zinc-900 group-hover:text-blue-600 transition-colors duration-300">
-                            Case Planet
-                        </span>
+                <div class="exp-row">
+                    <div class="exp-meta">
+                        <div class="exp-date">2023 &mdash; Present</div>
+                        <div class="exp-company">Case Planet</div>
                     </div>
-                    <div class="md:col-span-8">
-                        <h3 class="font-bold text-xl text-zinc-900 mb-3">Founder &amp; Marketing Strategist</h3>
-                        <p class="text-zinc-500 text-sm leading-relaxed mb-6">
-                            Founded and scaled a direct-to-consumer brand from zero, owning strategy, content, community and campaign execution end to end.
-                        </p>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 border-l border-zinc-100 pl-4">
-                            <div>
-                                <span class="block text-[9px] font-bold uppercase tracking-widest text-zinc-400">Growth</span>
-                                <p class="text-xs text-zinc-600 mt-1">10,000+ customers and 101K followers built through organic social.</p>
+                    <div>
+                        <h3 class="exp-role">Founder &amp; Marketing Strategist</h3>
+                        <p class="exp-desc">Founded and scaled a direct-to-consumer brand from zero, owning strategy, content, community and campaign execution end to end.</p>
+                        <div class="exp-points">
+                            <div class="exp-point">
+                                <div class="exp-point-label">Growth</div>
+                                <p>10,000+ customers and 101K followers built through organic social.</p>
                             </div>
-                            <div>
-                                <span class="block text-[9px] font-bold uppercase tracking-widest text-zinc-400">Partnerships</span>
-                                <p class="text-xs text-zinc-600 mt-1">Collaborated with 20+ tech influencers on promotions and showcases.</p>
+                            <div class="exp-point">
+                                <div class="exp-point-label">Partnerships</div>
+                                <p>Collaborated with 20+ tech influencers on promotions and showcases.</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- GADPRO -->
-                <div class="py-12 grid md:grid-cols-12 gap-6 md:gap-8 items-start group">
-                    <div class="md:col-span-4 flex flex-col gap-1.5">
-                        <span class="text-xs font-mono text-zinc-400">2025</span>
-                        <span class="font-bold text-sm tracking-wide text-zinc-900 group-hover:text-blue-600 transition-colors duration-300">
-                            GADPRO
-                        </span>
+                <div class="exp-row">
+                    <div class="exp-meta">
+                        <div class="exp-date">2025</div>
+                        <div class="exp-company">GADPRO</div>
                     </div>
-                    <div class="md:col-span-8">
-                        <h3 class="font-bold text-xl text-zinc-900 mb-3">Sales &amp; Marketing Intern</h3>
-                        <p class="text-zinc-500 text-sm leading-relaxed mb-6">
-                            Executed targeted Meta Ads and Instagram promotion campaigns, and produced the creative that carried them.
-                        </p>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 border-l border-zinc-100 pl-4">
-                            <div>
-                                <span class="block text-[9px] font-bold uppercase tracking-widest text-zinc-400">Pipeline</span>
-                                <p class="text-xs text-zinc-600 mt-1">+30% brand reach and 50+ qualified leads inside two months.</p>
+                    <div>
+                        <h3 class="exp-role">Sales &amp; Marketing Intern</h3>
+                        <p class="exp-desc">Executed targeted Meta Ads and Instagram promotion campaigns, and produced the creative that carried them.</p>
+                        <div class="exp-points">
+                            <div class="exp-point">
+                                <div class="exp-point-label">Pipeline</div>
+                                <p>+30% brand reach and 50+ qualified leads inside two months.</p>
                             </div>
-                            <div>
-                                <span class="block text-[9px] font-bold uppercase tracking-widest text-zinc-400">Creative</span>
-                                <p class="text-xs text-zinc-600 mt-1">Ad creatives and campaign visuals that lifted engagement by 25%.</p>
+                            <div class="exp-point">
+                                <div class="exp-point-label">Creative</div>
+                                <p>Ad creatives and campaign visuals that lifted engagement by 25%.</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Freelance -->
-                <div class="py-12 grid md:grid-cols-12 gap-6 md:gap-8 items-start group">
-                    <div class="md:col-span-4 flex flex-col gap-1.5">
-                        <span class="text-xs font-mono text-zinc-400">2020 &mdash; Present</span>
-                        <span class="font-bold text-sm tracking-wide text-zinc-900 group-hover:text-blue-600 transition-colors duration-300">
-                            Freelance
-                        </span>
+                <div class="exp-row">
+                    <div class="exp-meta">
+                        <div class="exp-date">2020 &mdash; Present</div>
+                        <div class="exp-company">Freelance</div>
                     </div>
-                    <div class="md:col-span-8">
-                        <h3 class="font-bold text-xl text-zinc-900 mb-3">Social Media Manager</h3>
-                        <p class="text-zinc-500 text-sm leading-relaxed mb-6">
-                            5+ years managing and growing pages across regional, campus, event and commerce niches &mdash; from cold start to community scale.
-                        </p>
-                        <div class="grid grid-cols-1 gap-4 border-l border-zinc-100 pl-4">
-                            <div>
-                                <span class="block text-[9px] font-bold uppercase tracking-widest text-zinc-400">Portfolio</span>
-                                <p class="text-xs text-zinc-600 mt-1">20+ brand accounts managed and scaled, together generating 200M+ dashboard views.</p>
+                    <div>
+                        <h3 class="exp-role">Social Media Manager</h3>
+                        <p class="exp-desc">5+ years managing and growing pages across regional, campus, event and commerce niches &mdash; from cold start to community scale.</p>
+                        <div class="exp-points">
+                            <div class="exp-point">
+                                <div class="exp-point-label">Portfolio</div>
+                                <p>20+ brand accounts managed and scaled, together generating 200M+ dashboard views.</p>
                             </div>
                         </div>
                     </div>
@@ -469,111 +1007,128 @@
             </div>
         </section>
 
-        <!-- Expertise Section -->
-        <section class="fade-in mb-28 md:mb-40">
-            <h2 class="text-[10px] font-bold tracking-[0.3em] uppercase text-zinc-400 mb-10">Expertise</h2>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-y-12 gap-x-8">
-                <div>
-                    <h3 class="text-xs font-bold uppercase tracking-widest text-zinc-300 mb-4">Strategy</h3>
-                    <div class="flex flex-col gap-2 font-bold text-xl tracking-tight">
-                        <span class="hover:opacity-50 transition-opacity cursor-default">Organic Growth</span>
-                        <span class="hover:opacity-50 transition-opacity cursor-default">Funnel Architecture</span>
-                        <span class="hover:opacity-50 transition-opacity cursor-default">Brand Positioning</span>
-                    </div>
+        <!-- Expertise -->
+        <section class="section-padding" id="expertise">
+            <div class="section-title-wrapper">
+                <div class="sub-heading">Expertise</div>
+                <h2 class="section-heading">What I Bring To A Brand</h2>
+            </div>
+
+            <div class="skill-grid">
+                <div class="skill-col">
+                    <h4>Strategy</h4>
+                    <ul class="skill-list">
+                        <li>Organic Growth</li>
+                        <li>Funnel Architecture</li>
+                        <li>Brand Positioning</li>
+                    </ul>
                 </div>
-                <div>
-                    <h3 class="text-xs font-bold uppercase tracking-widest text-zinc-300 mb-4">Content</h3>
-                    <div class="flex flex-col gap-2 font-bold text-xl tracking-tight">
-                        <span class="hover:opacity-50 transition-opacity cursor-default">Short-Form Video</span>
-                        <span class="hover:opacity-50 transition-opacity cursor-default">Viral Hooks</span>
-                        <span class="hover:opacity-50 transition-opacity cursor-default">Community Building</span>
-                    </div>
+                <div class="skill-col">
+                    <h4>Content</h4>
+                    <ul class="skill-list">
+                        <li>Short-Form Video</li>
+                        <li>Viral Hooks</li>
+                        <li>Community Building</li>
+                    </ul>
                 </div>
-                <div>
-                    <h3 class="text-xs font-bold uppercase tracking-widest text-zinc-300 mb-4">Tools</h3>
-                    <div class="flex flex-col gap-2 font-bold text-xl tracking-tight">
-                        <span class="hover:opacity-50 transition-opacity cursor-default">Meta Ads</span>
-                        <span class="hover:opacity-50 transition-opacity cursor-default">Interakt</span>
-                        <span class="hover:opacity-50 transition-opacity cursor-default">AI Workflows</span>
-                    </div>
+                <div class="skill-col">
+                    <h4>Tools</h4>
+                    <ul class="skill-list">
+                        <li>Meta Ads</li>
+                        <li>Interakt</li>
+                        <li>AI Workflows</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
         <!-- Education & Recognition -->
-        <section class="fade-in mb-28 md:mb-40 grid md:grid-cols-2 gap-16">
-            <div>
-                <h2 class="text-[10px] font-bold tracking-[0.3em] uppercase text-zinc-400 mb-8">Education</h2>
-                <div class="flex flex-col gap-6">
-                    <div class="border-l border-zinc-100 pl-4">
-                        <div class="font-bold text-base text-zinc-900">MBA, Marketing</div>
-                        <div class="text-sm text-zinc-500 mt-0.5">DCMS, University of Calicut</div>
-                        <div class="text-xs font-mono text-zinc-400 mt-1">2024 &mdash; Present</div>
+        <section class="section-padding" id="education">
+            <div class="two-col">
+                <div>
+                    <div class="section-title-wrapper">
+                        <div class="sub-heading">Education</div>
+                        <h2 class="section-heading">Academic Profile</h2>
                     </div>
-                    <div class="border-l border-zinc-100 pl-4">
-                        <div class="font-bold text-base text-zinc-900">BBA</div>
-                        <div class="text-sm text-zinc-500 mt-0.5">SNGS Pattambi</div>
-                        <div class="text-xs font-mono text-zinc-400 mt-1">2020 &mdash; 2023</div>
+                    <div class="edu-item">
+                        <div class="edu-title">MBA, Marketing</div>
+                        <div class="edu-sub">DCMS, University of Calicut</div>
+                        <div class="edu-date">2024 &mdash; Present</div>
+                    </div>
+                    <div class="edu-item">
+                        <div class="edu-title">BBA</div>
+                        <div class="edu-sub">SNGS Pattambi</div>
+                        <div class="edu-date">2020 &mdash; 2023</div>
                     </div>
                 </div>
-            </div>
-            <div>
-                <h2 class="text-[10px] font-bold tracking-[0.3em] uppercase text-zinc-400 mb-8">Recognition</h2>
-                <div class="flex flex-col gap-6">
-                    <div class="border-l border-zinc-100 pl-4">
-                        <div class="font-bold text-base text-zinc-900">Top 9 Percentile &mdash; KMAT &rsquo;24</div>
-                        <div class="text-sm text-zinc-500 mt-0.5">Management aptitude test, Govt. of Kerala</div>
+                <div>
+                    <div class="section-title-wrapper">
+                        <div class="sub-heading">Recognition</div>
+                        <h2 class="section-heading">Achievements</h2>
                     </div>
-                    <div class="border-l border-zinc-100 pl-4">
-                        <div class="font-bold text-base text-zinc-900">2nd Prize &mdash; Marketing Game</div>
-                        <div class="text-sm text-zinc-500 mt-0.5">Ecletica &rsquo;26, Farook College &mdash; 80+ competitors statewide</div>
+                    <div class="edu-item">
+                        <div class="edu-title">Top 9 Percentile &mdash; KMAT &rsquo;24</div>
+                        <div class="edu-sub">Management aptitude test, Govt. of Kerala</div>
+                    </div>
+                    <div class="edu-item">
+                        <div class="edu-title">2nd Prize &mdash; Marketing Game</div>
+                        <div class="edu-sub">Ecletica &rsquo;26, Farook College &mdash; 80+ competitors statewide</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section class="fade-in border-t border-black pt-20 flex flex-col md:flex-row justify-between gap-16">
-            <h2 class="text-4xl md:text-6xl font-bold tracking-tighter leading-none uppercase max-w-xl">
-                Content that reaches, <br />
-                strategy that converts
-            </h2>
-            <div class="flex flex-col gap-8 items-start">
-                <a href="mailto:workwithcabdurabb@gmail.com" class="group flex items-center gap-3 text-2xl font-bold uppercase tracking-[0.1em] text-blue-600 transition-all hover:opacity-70">
-                    Email <i data-lucide="arrow-up-right" class="w-6 h-6 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/c-abdurabb-52840b2b6" target="_blank" rel="noopener" class="group flex items-center gap-3 text-2xl font-bold uppercase tracking-[0.1em] text-blue-600 transition-all hover:opacity-70">
-                    LinkedIn <i data-lucide="arrow-up-right" class="w-6 h-6 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"></i>
-                </a>
-                <a href="https://www.instagram.com/rib_zee" target="_blank" rel="noopener" class="group flex items-center gap-3 text-2xl font-bold uppercase tracking-[0.1em] text-blue-600 transition-all hover:opacity-70">
-                    Instagram <i data-lucide="arrow-up-right" class="w-6 h-6 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"></i>
-                </a>
+        <!-- Contact -->
+        <section class="section-padding" id="contact">
+            <div class="contact-block">
+                <div>
+                    <h2 class="contact-title">Content that reaches,<br>strategy that converts.</h2>
+                    <p class="contact-sub">Available for social media strategy, brand growth and campaign work. Based in Kerala, working with brands anywhere.</p>
+                </div>
+                <div class="contact-links">
+                    <a href="mailto:workwithcabdurabb@gmail.com" class="contact-link">Email <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="https://www.linkedin.com/in/c-abdurabb-52840b2b6" target="_blank" rel="noopener" class="contact-link">LinkedIn <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    <a href="https://www.instagram.com/rib_zee" target="_blank" rel="noopener" class="contact-link">Instagram <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
             </div>
         </section>
-    </main>
 
-    <!-- Footer -->
-    <footer class="max-w-4xl mx-auto px-6 pb-24 text-[10px] font-bold tracking-[0.3em] uppercase text-zinc-300">
-        &copy; <span id="year"></span> C Abdurabb &middot; Kerala, India
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year"></span> C Abdurabb &middot; Kerala, India. All Rights Reserved.</p>
+        </div>
     </footer>
 
     <script>
-        lucide.createIcons();
         document.getElementById('year').textContent = new Date().getFullYear();
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
+        var navLinks = document.querySelectorAll('nav a[href^="#"]');
+        navLinks.forEach(function (link) {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                navLinks.forEach(function (l) { l.classList.remove('active'); });
+                link.classList.add('active');
+                var target = document.querySelector(link.getAttribute('href'));
+                if (target) { target.scrollIntoView({ behavior: 'smooth' }); }
             });
-        }, { threshold: 0.1 });
+        });
 
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        // Highlight the nav item for the section currently in view
+        var sections = ['home', 'pages', 'experience', 'education', 'contact'];
+        var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (!entry.isIntersecting) { return; }
+                navLinks.forEach(function (l) {
+                    l.classList.toggle('active', l.getAttribute('href') === '#' + entry.target.id);
+                });
+            });
+        }, { rootMargin: '-45% 0px -45% 0px' });
 
-        window.addEventListener('load', () => {
-            const firstSection = document.querySelector('.fade-in');
-            if (firstSection) firstSection.classList.add('visible');
+        sections.forEach(function (id) {
+            var el = document.getElementById(id);
+            if (el) { observer.observe(el); }
         });
     </script>
 </body>
