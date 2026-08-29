@@ -912,6 +912,55 @@
             text-overflow: ellipsis;
         }
 
+
+        .crew-group-label {
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-main);
+            margin: 2.8rem 0 1.3rem 0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .crew-group-label:first-of-type { margin-top: 0; }
+
+        .crew-group-label::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border-color);
+        }
+
+        .campaign-strip {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            background-color: var(--dark-banner);
+            border-radius: 10px;
+            padding: 2rem 2.2rem;
+            margin-bottom: 1.6rem;
+        }
+
+        .campaign-stat-num {
+            font-family: var(--font-heading);
+            font-size: 1.85rem;
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1;
+        }
+
+        .campaign-stat-label {
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(255,255,255,0.55);
+            margin-top: 0.45rem;
+        }
+
     </style>
 </head>
 <body>
@@ -1214,6 +1263,8 @@
                 <p class="section-intro">Tech and media creators I have run collaborations with for Case Planet &mdash; product launches, reviews and promotional campaigns. Distribution I can reach directly rather than buy cold.</p>
             </div>
 
+            <div class="crew-group-label">Tech collaborations &mdash; Case Planet</div>
+
             <div class="crew-grid">
                 <a href="https://www.instagram.com/mrperfecttech" target="_blank" rel="noopener" class="crew-card">
                     <div class="crew-avatar"><img src="assets/inf-mrperfect.jpg" alt="@mrperfecttech profile picture" loading="lazy" width="100" height="100"></div>
@@ -1275,6 +1326,74 @@
                         <div class="crew-name">Shahul Ameen</div>
                         <div class="crew-reach">45K followers</div>
                         <div class="crew-handle">@smtmalayalam</div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="crew-group-label">Paid campaign roster &mdash; Eduport</div>
+
+            <div class="campaign-strip">
+                <div>
+                    <div class="campaign-stat-num">&#8377;1.47L</div>
+                    <div class="campaign-stat-label">Budget managed</div>
+                </div>
+                <div>
+                    <div class="campaign-stat-num">3.33M</div>
+                    <div class="campaign-stat-label">Views delivered</div>
+                </div>
+                <div>
+                    <div class="campaign-stat-num">&#8377;0.04</div>
+                    <div class="campaign-stat-label">Cost per view</div>
+                </div>
+                <div>
+                    <div class="campaign-stat-num">12</div>
+                    <div class="campaign-stat-label">Creators booked</div>
+                </div>
+            </div>
+
+            <div class="crew-grid">
+                <a href="https://www.instagram.com/manjeri_story" target="_blank" rel="noopener" class="crew-card">
+                    <div class="crew-avatar"><img src="assets/inf-manjeri.jpg" alt="@manjeri_story profile picture" loading="lazy" width="100" height="100"></div>
+                    <div class="crew-info">
+                        <div class="crew-name">Manjeri Story</div>
+                        <div class="crew-reach">626K &middot; 71.7K views</div>
+                        <div class="crew-handle">@manjeri_story</div>
+                    </div>
+                </a>
+
+                <a href="https://www.instagram.com/travel_foodie_sajeer" target="_blank" rel="noopener" class="crew-card">
+                    <div class="crew-avatar"><img src="assets/inf-sajeer.jpg" alt="@travel_foodie_sajeer profile picture" loading="lazy" width="100" height="100"></div>
+                    <div class="crew-info">
+                        <div class="crew-name">Travel Foodie Sajeer</div>
+                        <div class="crew-reach">145K &middot; 33.2K views</div>
+                        <div class="crew-handle">@travel_foodie_sajeer</div>
+                    </div>
+                </a>
+
+                <a href="https://www.instagram.com/jzt.4u" target="_blank" rel="noopener" class="crew-card">
+                    <div class="crew-avatar"><img src="assets/inf-jzt.jpg" alt="@jzt.4u profile picture" loading="lazy" width="100" height="100"></div>
+                    <div class="crew-info">
+                        <div class="crew-name">Farsin Bin Basheer</div>
+                        <div class="crew-reach">125K &middot; 185K views</div>
+                        <div class="crew-handle">@jzt.4u</div>
+                    </div>
+                </a>
+
+                <a href="https://www.instagram.com/iml_foodie_travel" target="_blank" rel="noopener" class="crew-card">
+                    <div class="crew-avatar"><img src="assets/inf-imlfoodie.jpg" alt="@iml_foodie_travel profile picture" loading="lazy" width="100" height="100"></div>
+                    <div class="crew-info">
+                        <div class="crew-name">IML Foodie Travel</div>
+                        <div class="crew-reach">120K &middot; 15.6K views</div>
+                        <div class="crew-handle">@iml_foodie_travel</div>
+                    </div>
+                </a>
+
+                <a href="https://www.instagram.com/shehza_kathoon" target="_blank" rel="noopener" class="crew-card">
+                    <div class="crew-avatar"><img src="assets/inf-shehza.jpg" alt="@shehza_kathoon profile picture" loading="lazy" width="100" height="100"></div>
+                    <div class="crew-info">
+                        <div class="crew-name">Shehzaa</div>
+                        <div class="crew-reach">20K &middot; 12.5K views</div>
+                        <div class="crew-handle">@shehza_kathoon</div>
                     </div>
                 </a>
             </div>
