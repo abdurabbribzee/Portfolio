@@ -468,6 +468,105 @@
                 display: none; /* Can be toggled with JS */
             }
         }
+
+        /* --- PAGES I BUILT --- */
+        .pages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .page-card {
+            display: flex;
+            flex-direction: column;
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 2.2rem 2rem;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+
+        .page-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.06);
+            border-color: var(--accent-green);
+        }
+
+        .page-avatar {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid var(--accent-green);
+            margin-bottom: 1.4rem;
+            flex-shrink: 0;
+        }
+
+        .page-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .page-handle {
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+            margin-bottom: 0.6rem;
+        }
+
+        .page-hook {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            font-weight: 800;
+            line-height: 1.25;
+            letter-spacing: -0.4px;
+            margin-bottom: 1rem;
+        }
+
+        .page-note {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 1.8rem;
+        }
+
+        .page-foot {
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .page-stat {
+            background: var(--badge-bg);
+            color: var(--accent-green-dark);
+            border: 1px solid var(--accent-green);
+            border-radius: 50px;
+            padding: 5px 14px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .page-go {
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: gap 0.2s ease;
+        }
+
+        .page-card:hover .page-go {
+            gap: 12px;
+        }
+
     </style>
 </head>
 <body>
@@ -581,6 +680,54 @@
                     <h3 class="card-title">Video Impressions</h3>
                     <p class="card-desc">Generated viral short-form reach across educational and tech brand assets.</p>
                 </div>
+            </div>
+        </section>
+
+        <section class="section-padding" id="pages">
+            <div class="section-title-wrapper">
+                <div class="sub-heading">Pages I Built</div>
+                <h2 class="section-heading">Grown From Zero, Organically</h2>
+            </div>
+
+            <div class="pages-grid">
+                <a href="https://www.instagram.com/trollpattambi" target="_blank" rel="noopener" class="page-card">
+                    <div class="page-avatar">
+                        <img src="assets/dp-trollpattambi.jpg" alt="@trollpattambi profile picture" loading="lazy" width="100" height="100">
+                    </div>
+                    <div class="page-handle">@trollpattambi</div>
+                    <h3 class="page-hook">Kerala&rsquo;s most followed troll page. Admin since post one.</h3>
+                    <p class="page-note">Grew a regional humour page into a cultural fixture for Pattambi &mdash; and kept the voice consistent the entire way up.</p>
+                    <div class="page-foot">
+                        <span class="page-stat">88.5K followers</span>
+                        <span class="page-go">View page <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <a href="https://www.instagram.com/foodstories_byribzee" target="_blank" rel="noopener" class="page-card">
+                    <div class="page-avatar">
+                        <img src="assets/dp-foodstories.jpg" alt="@foodstories_byribzee profile picture" loading="lazy" width="100" height="100">
+                    </div>
+                    <div class="page-handle">@foodstories_byribzee</div>
+                    <h3 class="page-hook">48,000 people in Calicut decide dinner here.</h3>
+                    <p class="page-note">A food discovery page built on taste, shoot, share. Restaurants now come to the DMs instead of the other way round.</p>
+                    <div class="page-foot">
+                        <span class="page-stat">48K followers</span>
+                        <span class="page-go">View page <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <a href="https://www.instagram.com/rib_zee" target="_blank" rel="noopener" class="page-card">
+                    <div class="page-avatar">
+                        <img src="assets/dp-ribzee.jpg" alt="@rib_zee profile picture" loading="lazy" width="100" height="100">
+                    </div>
+                    <div class="page-handle">@rib_zee</div>
+                    <h3 class="page-hook">Three posts past a million views. Nothing spent on ads.</h3>
+                    <p class="page-note">The personal page where every format gets tested first. If a hook lands here, it ships to the brand accounts.</p>
+                    <div class="page-foot">
+                        <span class="page-stat">11K followers</span>
+                        <span class="page-go">View page <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
             </div>
         </section>
     </div>
