@@ -518,6 +518,94 @@
             .work-cta { grid-template-columns: 1fr; padding: 2.5rem 1.8rem; }
         }
 
+
+        /* --- MOMENT MARKETING --- */
+        .mm-section { padding: 1rem 0 4rem 0; }
+
+        .mm-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .mm-card {
+            display: flex;
+            flex-direction: column;
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+        }
+
+        .mm-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 26px rgba(0,0,0,0.07);
+            border-color: var(--accent-green);
+        }
+
+        .mm-thumb {
+            aspect-ratio: 1/1;
+            background: #e9edeb;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .mm-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+        .mm-moment {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: rgba(9,19,25,0.82);
+            backdrop-filter: blur(6px);
+            color: #ffffff;
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 5px 11px;
+            border-radius: 50px;
+        }
+
+        .mm-body { padding: 1.3rem 1.4rem 1.5rem 1.4rem; display: flex; flex-direction: column; flex: 1; }
+
+        .mm-copy {
+            font-family: var(--font-heading);
+            font-size: 1.02rem;
+            font-weight: 800;
+            line-height: 1.35;
+            margin-bottom: 0.4rem;
+        }
+
+        .mm-gloss {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-bottom: 0.8rem;
+        }
+
+        .mm-why {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 1.2rem;
+        }
+
+        .mm-foot {
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--accent-green-dark);
+        }
+
+        .mm-foot span { display: inline-flex; align-items: center; gap: 5px; }
+
     </style>
 </head>
 <body>
@@ -713,6 +801,109 @@
                 </a>
             </div>
         </section>
+        <section class="mm-section">
+            <h2 class="proof-head">Moment Marketing</h2>
+            <p class="proof-lede">Campaigns for Eduport built on a moment the audience is already living through &mdash; a festival, an exam window, a news story, the weather. Copy and concept mine.</p>
+
+            <div class="mm-grid">
+                <a href="https://www.instagram.com/p/DW_TRcnEvBe/" target="_blank" rel="noopener" class="mm-card">
+                    <div class="mm-thumb">
+                        <img src="assets/mm-student-type.jpg" alt="Vacation season campaign creative" loading="lazy">
+                        <span class="mm-moment">Vacation season</span>
+                    </div>
+                    <div class="mm-body">
+                        <div class="mm-copy">നീ ഏത് type student ആണ്?</div>
+                        <div class="mm-gloss">"Which type of student are you?"</div>
+                        <p class="mm-why">A tag-a-friend carousel built on vacation-time classroom archetypes. The copy asks readers to sort themselves and their friends into a type, which turns passive scrolling into comment threads.</p>
+                        <div class="mm-foot">
+                            <span><i class="fa-solid fa-heart"></i> 4,072</span>
+                            <span><i class="fa-solid fa-comment"></i> 66</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://www.instagram.com/p/DZE3WzKEhhj/" target="_blank" rel="noopener" class="mm-card">
+                    <div class="mm-thumb">
+                        <img src="assets/mm-plustwo.jpg" alt="Results season campaign creative" loading="lazy">
+                        <span class="mm-moment">Results season</span>
+                    </div>
+                    <div class="mm-body">
+                        <div class="mm-copy">ഒരു മാസം കൊണ്ട് +2 നമ്മൾ തിരിച്ചു പിടിക്കും</div>
+                        <div class="mm-gloss">"In one month, we take Plus Two back"</div>
+                        <p class="mm-why">Timed to the Plus Two SAY and improvement exam window, when students who slipped are deciding whether to retry. Written as a promise in first-person plural rather than an ad.</p>
+                        <div class="mm-foot">
+                            <span><i class="fa-solid fa-heart"></i> 1,552</span>
+                            <span><i class="fa-solid fa-comment"></i> 18</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://www.instagram.com/p/Da2rqqtEqs9/" target="_blank" rel="noopener" class="mm-card">
+                    <div class="mm-thumb">
+                        <img src="assets/mm-bus.jpg" alt="News cycle campaign creative" loading="lazy">
+                        <span class="mm-moment">News cycle</span>
+                    </div>
+                    <div class="mm-body">
+                        <div class="mm-copy">ബസ്സിൽ യാത്ര ചെയുന്ന എല്ലാ വിദ്യാർത്ഥികളും അറിഞ്ഞിരിക്കണം</div>
+                        <div class="mm-gloss">"Every student who travels by bus should know this"</div>
+                        <p class="mm-why">Newsjacking a live student-concession story, credited to a lawyer and Reporter TV. Utility content that earns saves and shares from the exact audience the brand sells to.</p>
+                        <div class="mm-foot">
+                            <span><i class="fa-solid fa-heart"></i> 992</span>
+                            <span><i class="fa-solid fa-comment"></i> 7</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://www.instagram.com/p/DZMmvLCElDb/" target="_blank" rel="noopener" class="mm-card">
+                    <div class="mm-thumb">
+                        <img src="assets/mm-scholarship.jpg" alt="Scholarship window campaign creative" loading="lazy">
+                        <span class="mm-moment">Scholarship window</span>
+                    </div>
+                    <div class="mm-body">
+                        <div class="mm-copy">പഠിക്കാൻ പണം വേണോ?</div>
+                        <div class="mm-gloss">"Need money to study?"</div>
+                        <p class="mm-why">A blunt four-word question aimed at the cost objection, published during the scholarship application window. Drew the second-highest comment count of the set.</p>
+                        <div class="mm-foot">
+                            <span><i class="fa-solid fa-heart"></i> 769</span>
+                            <span><i class="fa-solid fa-comment"></i> 30</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://www.instagram.com/p/DanVzqIklv_/" target="_blank" rel="noopener" class="mm-card">
+                    <div class="mm-thumb">
+                        <img src="assets/mm-monsoon.jpg" alt="Monsoon campaign creative" loading="lazy">
+                        <span class="mm-moment">Monsoon</span>
+                    </div>
+                    <div class="mm-body">
+                        <div class="mm-copy">മഴക്കാലമാണ് ശ്രദ്ധിക്കുക</div>
+                        <div class="mm-gloss">"It’s monsoon season — take care"</div>
+                        <p class="mm-why">Seasonal safety advice with no sell attached. Brand presence earned by being useful during the weather event everyone in Kerala is already talking about.</p>
+                        <div class="mm-foot">
+                            <span><i class="fa-solid fa-heart"></i> 696</span>
+                            <span><i class="fa-solid fa-comment"></i> 1</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://www.instagram.com/p/DbdKWWzkvUm/" target="_blank" rel="noopener" class="mm-card">
+                    <div class="mm-thumb">
+                        <img src="assets/mm-onam.jpg" alt="Onam campaign creative" loading="lazy">
+                        <span class="mm-moment">Onam</span>
+                    </div>
+                    <div class="mm-body">
+                        <div class="mm-copy">മാവേലി എത്തി മക്കളെ</div>
+                        <div class="mm-gloss">"Maveli has arrived, children"</div>
+                        <p class="mm-why">Onam greeting written in Maveli’s own voice rather than the brand’s. The purest form of the format: show up on the day that matters to the audience, in the register they expect.</p>
+                        <div class="mm-foot">
+                            <span><i class="fa-solid fa-heart"></i> 568</span>
+                            <span><i class="fa-solid fa-comment"></i> 0</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
         <section class="work-cta">
             <div>
                 <h2 class="work-cta-title">Want content that travels this far?</h2>
