@@ -308,7 +308,6 @@
         }
 
         @media (max-width: 860px) {
-            nav { display: none; }
             .reel-card { grid-template-columns: 1fr; gap: 1.8rem; }
             .reel-thumb { max-width: 260px; }
         }
@@ -396,6 +395,129 @@
 
         .proof-card:hover .proof-go { gap: 12px; }
 
+
+        /* --- MOBILE NAV --- */
+        .nav-toggle {
+            display: none;
+            background: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            width: 44px;
+            height: 44px;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.05rem;
+            color: var(--text-main);
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .nav-toggle:hover { border-color: var(--accent-green); }
+
+        @media (max-width: 992px) {
+            header { position: relative; }
+
+            .nav-toggle { display: inline-flex; }
+
+            nav {
+                display: none;
+                position: absolute;
+                top: calc(100% - 0.5rem);
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                background: #ffffff;
+                border: 1px solid var(--border-color);
+                border-radius: 10px;
+                padding: 0.5rem;
+                box-shadow: 0 16px 32px rgba(0,0,0,0.10);
+                z-index: 80;
+            }
+
+            nav.open { display: flex; }
+
+            nav .nav-link {
+                padding: 0.9rem 1rem;
+                border-radius: 6px;
+                font-size: 1rem;
+            }
+
+            nav .nav-link:hover { background: var(--bg-color); }
+        }
+
+
+        /* --- CLOSING CTA --- */
+        .work-cta {
+            background-color: var(--dark-banner);
+            color: #ffffff;
+            border-radius: 12px;
+            padding: 3.5rem 3rem;
+            margin-bottom: 5rem;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .work-cta-title {
+            font-family: var(--font-heading);
+            font-size: clamp(1.7rem, 3.4vw, 2.4rem);
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -0.8px;
+        }
+
+        .work-cta-sub {
+            color: rgba(255,255,255,0.65);
+            font-size: 0.98rem;
+            line-height: 1.6;
+            margin-top: 0.9rem;
+            max-width: 460px;
+        }
+
+        .work-cta-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 0.9rem;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.6rem;
+            min-width: 230px;
+            padding: 14px 22px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+        }
+
+        .cta-btn.primary {
+            background: var(--accent-green);
+            color: var(--text-main);
+        }
+
+        .cta-btn.primary:hover { transform: translateY(-2px); }
+
+        .cta-btn.ghost {
+            border: 1px solid rgba(255,255,255,0.2);
+            color: #ffffff;
+        }
+
+        .cta-btn.ghost:hover {
+            background: rgba(255,255,255,0.08);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 860px) {
+            .work-cta { grid-template-columns: 1fr; padding: 2.5rem 1.8rem; }
+        }
+
     </style>
 </head>
 <body>
@@ -413,6 +535,7 @@
                 <a href="index.html#experience" class="nav-link">Experience</a>
                 <a href="index.html#contact" class="nav-link">Contact</a>
             </nav>
+            <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
         </header>
 
         <section class="page-intro">
@@ -590,6 +713,16 @@
                 </a>
             </div>
         </section>
+        <section class="work-cta">
+            <div>
+                <h2 class="work-cta-title">Want content that travels this far?</h2>
+                <p class="work-cta-sub">This is what I do for brands &mdash; shoot it, cut it, write the hook, and build the strategy that puts it in front of the right audience.</p>
+            </div>
+            <div class="work-cta-actions">
+                <a href="https://wa.me/919496340236" target="_blank" rel="noopener" class="cta-btn primary">Message on WhatsApp <i class="fa-brands fa-whatsapp"></i></a>
+                <a href="index.html#contact" class="cta-btn ghost">All contact options <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </section>
     </div>
 
     <footer>
@@ -600,6 +733,22 @@
 
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile nav toggle
+        var navToggle = document.querySelector('.nav-toggle');
+        var navEl = document.querySelector('nav');
+        if (navToggle && navEl) {
+            navToggle.addEventListener('click', function () {
+                var open = navEl.classList.toggle('open');
+                navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            });
+            navEl.querySelectorAll('a').forEach(function (a) {
+                a.addEventListener('click', function () {
+                    navEl.classList.remove('open');
+                    navToggle.setAttribute('aria-expanded', 'false');
+                });
+            });
+        }
     </script>
 </body>
 </html>
